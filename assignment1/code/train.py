@@ -25,6 +25,7 @@ args = parser.parse_args()
 train_data = np.genfromtxt(args.train, delimiter=",")
 train_X = train_data[:, :-1]
 train_Y = train_data[:, -1]
+print train_Y[-20:-1]
 
 valid_data = np.genfromtxt(args.valid, delimiter=",")
 valid_X = valid_data[:, :-1]
@@ -75,12 +76,14 @@ class Model:
         self.old_W = []
         self.old_b = []
         self.lbd = lbd
+        self.W_epsilon=[[]]
 
         print dimension_list
         self.num_class = dimension_list[-1]
 
         for i in range(1, self.L_num_layer + 2):
             self.W += [np.random.normal(0, 1, (dimension_list[i], dimension_list[i - 1]))]
+            self.W_epsilon += [np.random.normal(0, 1e-5, (dimension_list[i], dimension_list[i - 1]))]
             self.b += [np.random.normal(0, 1, dimension_list[i])]
             # self.gradient_W=np.zeros(self.W.shape)
             # self.gradient_b=np.zeros(self.b.shape)
@@ -113,9 +116,40 @@ class Model:
         # print "softmax value " + str(softmax_over_class) + " " + str(np.sum(softmax_over_class))
         return softmax_over_class, a, h
 
+    def forward_gradient_check(self,x,W_epsilon,activation=sigmoid):
+        h = [x]
+        a = [[]]
+
+        for i in range(1, self.L_num_layer + 2):
+            a += [np.dot(W_epsilon[i], h[i - 1]) + self.b[i]]
+            # print "current a_" + str(i) + " shape " + str(a[-1].shape)
+            if i == self.L_num_layer + 1:
+                break
+            h += [sigmoid(a[i])]  # h_k=g(a_k)
+            # print "current h_" + str(i) + " shape " + str(h[-1].shape)
+        # print "final a_" + str(i) + " shape " + str(a[-1].shape)
+        softmax_over_class = softmax(a[-1])
+        # print "softmax value " + str(softmax_over_class) + " " + str(np.sum(softmax_over_class))
+        return softmax_over_class, a, h
+
+    def gradient_check(self,i,delta_Wi,x,y):
+        new_W_plus_epsilon=self.W
+        new_W_plus_epsilon[i]+=self.W_epsilon[i]
+        f_W_plus_epsilon,a,h=self.forward_gradient_check(x,new_W_plus_epsilon)
+
+        new_W_minus_epsilon = self.W
+        new_W_minus_epsilon[i] -= self.W_epsilon[i]
+        f_W_minus_epsilon,a,h = self.forward_gradient_check(x, new_W_minus_epsilon)
+
+        print str(delta_Wi.shape)+" "+str(self.W_epsilon[i].shape)+" sanity check shape "+str((f_W_plus_epsilon-f_W_minus_epsilon).shape)
+
+
+
+
+
     def back_prop(self, x, y, f_x, a, h):
         e_y = np.zeros(self.num_class)
-        e_y[y - 1] = 1  # one hot class label
+        e_y[y] = 1  # one hot class label
 
         delta_a = [None] * (self.L_num_layer + 2)
         delta_W = [None] * (self.L_num_layer + 2)
@@ -144,6 +178,7 @@ class Model:
             # gradient_W_i = -1.0 * delta_W[i] - 2.0 * self.lbd * self.W[i]
             gradient_W_i = -1.0 * delta_W[i]
 
+            # self.gradient_check(i,delta_W[i],x,y)
 
             # self.new_W[i] = self.W[i] + self.lr * gradient_W_i
             self.W[i] = self.W[i] + self.lr * gradient_W_i
@@ -153,10 +188,11 @@ class Model:
             #     self.sum_gradient_W[i] +=gradient_W_i
 
             # gradient_b_i = -1 * delta_b[i] - 2.0 * self.lbd * self.b[i]
-            gradient_b_i = -1 * delta_b[i]
+
+            gradient_b_i = -1.0 * delta_b[i]
 
             # self.new_b[i] = self.b[i] + self.lr * gradient_b_i
-            self.W[i] = self.W[i] + self.lr * gradient_W_i
+            self.b[i] = self.b[i] + self.lr * gradient_b_i
 
             # if self.sum_gradient_b[i] ==None:
             #     self.sum_gradient_b[i]=gradient_b_i
@@ -205,15 +241,20 @@ class Model:
         one_hot_y = self.from_Y_onehot(valid_Y)
 
         # max_prob_class=np.sum(softmax_over_class, axis=1)
-        classification_error = np.sum(np.argmax(softmax_over_class, axis=1) != (np.asarray(valid_Y) - 1)) * 1.0 / len(
+        classification_error = np.sum(np.argmax(softmax_over_class, axis=1) != (np.asarray(valid_Y))) * 1.0 / len(
             valid_Y)
+        # print "classification error calculation "
+        # print softmax_over_class[:5,:]
+        # print valid_Y[:5]
+        # print np.sum(np.argmax(softmax_over_class[:5,:], axis=1) != (np.asarray(valid_Y[:5]))) * 1.0 / len(
+        #     valid_Y)
 
         return -1.0 * np.sum(np.multiply(np.log(softmax_over_class), one_hot_y)) / softmax_over_class.shape[
             0], classification_error
 
     def from_Y_onehot(self, valid_Y):
         row = range(len(valid_Y))
-        col = np.asarray(valid_Y, dtype=int) - 1
+        col = np.asarray(valid_Y, dtype=int)
         one_hot_y = np.zeros([len(valid_Y), self.num_class])
         one_hot_y[row, col] = 1
         return one_hot_y
@@ -245,11 +286,11 @@ plot_epoch_test=[]
 import matplotlib.pyplot as plt
 
 
-def savecount():
-    plt.plot(np.arange(len(plot_epoch_train)),plot_epoch_train)
-    plt.plot(np.arange(len(plot_epoch_valid)),plot_epoch_valid)
-    plt.plot(np.arange(len(plot_epoch_test)), plot_epoch_test)
-    plt.ylabel('some numbers')
+def plot_curve():
+    plt.plot(np.arange(len(plot_epoch_train)),plot_epoch_train,label="train")
+    plt.plot(np.arange(len(plot_epoch_valid)),plot_epoch_valid,label="valid")
+    plt.plot(np.arange(len(plot_epoch_test)), plot_epoch_test,label="test")
+    plt.legend()
     plt.show()
 
 try:
@@ -297,7 +338,7 @@ try:
 
 
 except KeyboardInterrupt as e:
-    savecount()
+    plot_curve()
     # loop.close()
 
     # if epoch==1:
