@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="63ef14c8-d68e-4be8-a9a5-73fe6216a88c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assignment1/code/visualize_parameter.py" afterPath="$PROJECT_DIR$/assignment1/code/visualize_parameter.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assignment1/code/train.py" afterPath="$PROJECT_DIR$/assignment1/code/train.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,11 +26,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="train.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="train.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assignment1/code/train.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="310" column="0" lean-forward="true" selection-start-line="310" selection-start-column="0" selection-end-line="310" selection-end-column="0" />
+            <state relative-caret-position="77">
+              <caret line="343" column="50" lean-forward="false" selection-start-line="343" selection-start-column="26" selection-end-line="343" selection-end-column="50" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
                 <element signature="e#3127#3770#0" expanded="false" />
@@ -40,11 +40,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="visualize_parameter.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="visualize_parameter.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assignment1/code/visualize_parameter.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+            <state relative-caret-position="150">
+              <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -116,8 +116,8 @@
         <option value="$PROJECT_DIR$/assignment1/code/train_SGD.py" />
         <option value="$PROJECT_DIR$/assignment1/code/6d_lr.py" />
         <option value="$PROJECT_DIR$/assignment1/code/train_minibatch.py" />
-        <option value="$PROJECT_DIR$/assignment1/code/train.py" />
         <option value="$PROJECT_DIR$/assignment1/code/visualize_parameter.py" />
+        <option value="$PROJECT_DIR$/assignment1/code/train.py" />
       </list>
     </option>
   </component>
@@ -543,10 +543,125 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assignment1/code/visualize_parameter.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="0" lean-forward="true" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+        <state relative-caret-position="30">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="23" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assignment1/code/visualize_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assignment1/code/train.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3690">
+          <caret line="252" column="14" lean-forward="true" selection-start-line="252" selection-start-column="14" selection-end-line="252" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#3127#3770#0" expanded="false" />
+            <element signature="e#3829#4329#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assignment1/code/visualize_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assignment1/code/train.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3765">
+          <caret line="257" column="0" lean-forward="true" selection-start-line="257" selection-start-column="0" selection-end-line="257" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#3127#3770#0" expanded="false" />
+            <element signature="e#3829#4329#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assignment1/data/digitsvalid.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assignment1/code/visualize_data.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="17" column="29" lean-forward="false" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assignment1/code/Model.py" />
+    <entry file="file://$PROJECT_DIR$/assignment1/code/6d_lr.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="59" lean-forward="false" selection-start-line="27" selection-start-column="59" selection-end-line="27" selection-end-column="59" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assignment1/code/6ab_load_ce_cr_avg_by_num_samply.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assignment1/code/train_minibatch.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="421">
+          <caret line="281" column="77" lean-forward="false" selection-start-line="281" selection-start-column="77" selection-end-line="281" selection-end-column="77" />
+          <folding>
+            <element signature="e#2055#3128#0" expanded="false" />
+            <element signature="e#3180#6256#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assignment1/code/visualize_parameter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="0" lean-forward="true" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assignment1/code/train.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="77">
+          <caret line="343" column="50" lean-forward="false" selection-start-line="343" selection-start-column="26" selection-end-line="343" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#3127#3770#0" expanded="false" />
+            <element signature="e#3829#4329#0" expanded="false" />
           </folding>
         </state>
       </provider>

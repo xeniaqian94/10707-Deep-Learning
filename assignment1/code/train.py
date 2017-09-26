@@ -152,7 +152,7 @@ class Model:
 
             if not self.prev_W == None and self.momentum > 0:
                 delta_W_i -= 1.0 * self.momentum * self.prev_W[i]
-                delta_b_i-=1.0*self.momentum*self.prev_b[i]
+                delta_b_i -= 1.0 * self.momentum * self.prev_b[i]
 
             self.W[i] = self.W[i] + self.lr * delta_W_i
             self.b[i] = self.b[i] + self.lr * delta_b_i
@@ -291,7 +291,7 @@ class Model:
 
 if __name__ == "__main__":
     def plot_curve(label=""):
-        leading_label = sys.argv[0].split(".")[0]+"_"+str(int(time.time()))
+        leading_label = sys.argv[0].split(".")[0] + "_" + str(int(time.time()))
 
         # plt.plot(np.arange(len(plot_epoch_ce_train)), np.asarray(plot_epoch_ce_train), label="train")
         # plt.plot(np.arange(len(plot_epoch_ce_valid)), np.asarray(plot_epoch_ce_valid), label="valid")
@@ -327,6 +327,7 @@ if __name__ == "__main__":
         pickle.dump(plot_epoch_cr_valid, open("../dump/" + leading_label + "_cr_" + label, "w"))
         pickle.dump(plot_epoch_cr_test, open("../dump/" + leading_label + "_cr_" + label, "w"))
         pickle.dump(model, open("../dump/" + leading_label + "_model_" + label, "w"))
+        pickle.dump(speed, open("../dump/" + leading_label + "_speed_" + label, "w"))
 
 
     np.seterr(all='raise')
@@ -344,7 +345,7 @@ if __name__ == "__main__":
     parser.add_argument('-lr', type=float, help="learning rate", default=0.1)
     parser.add_argument('-lbd', type=float, help="regularization term", default=0.001)
     parser.add_argument('-momentum', type=float, help="average gradient", default=0.0)
-    parser.add_argument('-minibatch_size',type=int, help="minibatch_size", default=1)
+    parser.add_argument('-minibatch_size', type=int, help="minibatch_size", default=1)
     args = parser.parse_args()
 
     train_data = np.genfromtxt(args.train, delimiter=",")
@@ -372,6 +373,7 @@ if __name__ == "__main__":
     plot_epoch_cr_train = []
     plot_epoch_cr_valid = []
     plot_epoch_cr_test = []
+    speed = []
     model = Model(args.num_layer, [num_dimension, args.hidden_layer_1_dimension, args.num_class], args.lr, args.lbd,
                   args.momentum)
 
@@ -384,7 +386,7 @@ if __name__ == "__main__":
             print "epoch " + str(epoch) + " start "
             then = time.time()
 
-            if args.minibatch_size==1:
+            if args.minibatch_size == 1:
                 for instance_id in range(train_X.shape[0]):
                     if (instance_id % 1000 == 0):
                         print "sgd instance id " + str(instance_id)
@@ -392,9 +394,10 @@ if __name__ == "__main__":
             else:
                 for instance_id in range(0, train_X.shape[0], args.minibatch_size)[:-1]:
                     model.update_minibatch(train_X[instance_id:min(instance_id + args.minibatch_size, len(train_X))],
-                                 train_Y[instance_id:min(instance_id + args.minibatch_size, len(train_Y))])
-
-            print "epoch " + str(epoch) + " end in " + str(time.time() - then)
+                                           train_Y[instance_id:min(instance_id + args.minibatch_size, len(train_Y))])
+            speed_in_secs = time.time() - then
+            print "epoch " + str(epoch) + " end in " + str(speed_in_secs)
+            speed += [speed_in_secs]
 
             print "evaluating valid current learning rate " + str(model.lr)
             then = time.time()
