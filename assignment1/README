@@ -1,0 +1,10 @@
+The current directory assignment1/ is the root directory, where you will find
+	code/
+	data/
+	dump/
+
+To run a backpropagation with cross-entropy error function for 1-layer neural network with SGD implementation, 
+	cd code; python train.py # here parameters are tuned to its best setting
+
+To run a backpropagation with cross-entropy error function for 2-layer network with SGD implementation,
+	cd code python 
