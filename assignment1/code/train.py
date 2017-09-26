@@ -9,12 +9,6 @@ import matplotlib.pyplot as plt
 import pickle
 
 
-def sigmoid(x):
-    try:
-        return 1 / (1 + np.exp(-x))
-    except:
-        print "exception sigmoid!"
-        sys.exit(0)
 
 
 def softmax(x):
@@ -26,9 +20,46 @@ def softmax(x):
         print x
         sys.exit(0)
 
+def sigmoid(x):
+    try:
+        return 1 / (1 + np.exp(-x))
+    except:
+        print "exception sigmoid!"
+        sys.exit(0)
 
-def derivative_sigmoid(g_a):
+
+def derivative_sigmoid(g_a,a):
     return np.multiply(g_a, 1 - g_a)
+
+
+def tanh(x):
+    print "using tanh"
+    return np.tanh(x)
+
+def deact_tanh(g_a,a):
+    print "using deact tanh"
+    return 1-np.multiply(g_a,g_a)
+
+def tabulate(x, y, f):
+    return np.vectorize(f)(x,y)
+
+def ReLU(x):
+    print "using ReLU"
+    return tabulate(x,np.zeros(x.shape),max)
+
+def positive(x,y):
+    if x>0:
+        return 1
+    else:
+        return 0
+
+def deact_ReLU(g_a,a):
+    print "using deact ReLU"
+    return tabulate(a,np.zeros(x.shape),positive)
+
+
+
+
 
 
 def unison_shuffled_copies(a, b):
@@ -120,7 +151,7 @@ class Model:
         print str(delta_Wi.shape) + " " + str(self.W_epsilon[i].shape) + " sanity check shape " + str(
             (f_W_plus_epsilon - f_W_minus_epsilon).shape)
 
-    def back_prop(self, x, y, f_x, a, h):
+    def back_prop(self, x, y, f_x, a, h,deactivation=derivative_sigmoid):
         e_y = np.zeros(self.num_class)
         e_y[y] = 1  # one hot class label
 
@@ -140,7 +171,7 @@ class Model:
             gradient_h[k - 1] = np.dot(self.W[k].T, gradient_a[k])
             # raw_input(str(k)+" gradient_h[k - 1] \n" + str(gradient_h[k - 1]))
 
-            gradient_a[k - 1] = np.multiply(gradient_h[k - 1], derivative_sigmoid(h[k - 1]))
+            gradient_a[k - 1] = np.multiply(gradient_h[k - 1], derivative_sigmoid(h[k - 1],a[k-1]))
             # raw_input(str(k)+" gradient_a[k - 1] \n"+str(gradient_a[k - 1]))
 
         # eliminate the regularization term here
@@ -160,10 +191,18 @@ class Model:
         self.prev_W = gradient_W
         self.prev_b = gradient_b
 
-    def update(self, x, y):  # y is the final labely
-        f_x, a, h = self.forward(x)
+    def update(self, x, y,activation="sigmoid"):  # y is the final labely
+        if activation=="sigmoid":
+            f_x, a, h = self.forward(x)
         # print f_x.shape
-        self.back_prop(x, y, f_x, a, h)
+            self.back_prop(x, y, f_x, a, h)
+        elif activation=="tanh":
+            f_x,a,h=self.forward(x,tanh)
+            self.back_prop(x,y,f_x,a,h,deact_tanh)
+        elif activation=="ReLU":
+            f_x,a,h=self.forward(x,ReLU)
+            self.back_prop(x,y,f_x,a,h,deact_ReLU)
+
 
     def forward_minibatch(self, X, activation=sigmoid):
 
@@ -189,7 +228,7 @@ class Model:
 
         return softmax_over_class, a, h
 
-    def back_prop_minibatch(self, X, Y, f_X, a, h):
+    def back_prop_minibatch(self, X, Y, f_X, a, h,  deactivation=derivative_sigmoid):
         # print "within back_prop"
         num_instance = X.shape[0]
 
@@ -216,7 +255,7 @@ class Model:
             gradient_W[k] = np.einsum('ki,jk->kij', gradient_a[k], h[k - 1])
             gradient_b[k] = gradient_a[k]
             gradient_h[k - 1] = np.dot(gradient_a[k], self.W[k]).T
-            gradient_a[k - 1] = np.multiply(gradient_h[k - 1], derivative_sigmoid(h[k - 1])).T
+            gradient_a[k - 1] = np.multiply(gradient_h[k - 1], deactivation(h[k - 1],a[k-1])).T
             # raw_input(str(k)+" gradient_a[k - 1] \n"+str(gradient_a[k - 1]))
 
         # eliminate the regularization term here
@@ -342,10 +381,17 @@ if __name__ == "__main__":
     parser.add_argument('-num_layer', type=int, help="if 1 single layer, 2 then 2-layer network", default=1)
     parser.add_argument('-num_class', type=int, default=10)
     parser.add_argument('-hidden_layer_1_dimension', type=int, default=100)
+    parser.add_argument('-hidden_layer_2_dimension', type=int, default=0)
     parser.add_argument('-lr', type=float, help="learning rate", default=0.1)
     parser.add_argument('-lbd', type=float, help="regularization term", default=0.001)
     parser.add_argument('-momentum', type=float, help="average gradient", default=0.0)
     parser.add_argument('-minibatch_size', type=int, help="minibatch_size", default=1)
+    parser.add_argument('-batch_normalization',type=bool, help="whether do batch normalization or not ",default=False)
+    parser.add_argument('-activation',type=str,help="which activation to use ",default="sigmoid")
+
+    # python train.py -minibatch_size 32 -batch_normalization True
+
+
     args = parser.parse_args()
 
     train_data = np.genfromtxt(args.train, delimiter=",")
@@ -376,6 +422,10 @@ if __name__ == "__main__":
     speed = []
     model = Model(args.num_layer, [num_dimension, args.hidden_layer_1_dimension, args.num_class], args.lr, args.lbd,
                   args.momentum)
+    if not args.hidden_layer_2_dimension==0:
+        args.num_layer=2
+        model = Model(args.num_layer, [num_dimension, args.hidden_layer_1_dimension, args.hidden_layer_2_dimension, args.num_class], args.lr, args.lbd,
+                      args.momentum)
 
     try:
         for epoch in range(args.max_epoch):
@@ -390,11 +440,11 @@ if __name__ == "__main__":
                 for instance_id in range(train_X.shape[0]):
                     if (instance_id % 1000 == 0):
                         print "sgd instance id " + str(instance_id)
-                    model.update(train_X[instance_id], train_Y[instance_id])
+                    model.update(train_X[instance_id], train_Y[instance_id],args.activation)
             else:
                 for instance_id in range(0, train_X.shape[0], args.minibatch_size)[:-1]:
                     model.update_minibatch(train_X[instance_id:min(instance_id + args.minibatch_size, len(train_X))],
-                                           train_Y[instance_id:min(instance_id + args.minibatch_size, len(train_Y))])
+                                           train_Y[instance_id:min(instance_id + args.minibatch_size, len(train_Y))],args.activation)
             speed_in_secs = time.time() - then
             print "epoch " + str(epoch) + " end in " + str(speed_in_secs)
             speed += [speed_in_secs]
