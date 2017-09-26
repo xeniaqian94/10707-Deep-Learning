@@ -1,10 +1,7 @@
 import pickle
 import sys
-from train import Model
 import matplotlib.pyplot as plt
-import matplotlib.image as mpimg
 import numpy as np
-from PIL import Image
 
 
 model=pickle.load(open(sys.argv[1],"r"))
