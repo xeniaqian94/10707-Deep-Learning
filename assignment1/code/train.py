@@ -291,7 +291,7 @@ class Model:
 
 if __name__ == "__main__":
     def plot_curve(label=""):
-        leading_label = sys.argv[0].split(".")[0]+"_"+int(time.time())
+        leading_label = sys.argv[0].split(".")[0]+"_"+str(int(time.time()))
 
         # plt.plot(np.arange(len(plot_epoch_ce_train)), np.asarray(plot_epoch_ce_train), label="train")
         # plt.plot(np.arange(len(plot_epoch_ce_valid)), np.asarray(plot_epoch_ce_valid), label="valid")
