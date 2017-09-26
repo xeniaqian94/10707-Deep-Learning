@@ -326,10 +326,6 @@ if __name__ == "__main__":
             for instance_id in range(0, train_X.shape[0], args.minibatch_size)[:-1]:
                 model.update(train_X[instance_id:min(instance_id+args.minibatch_size,len(train_X))], train_Y[instance_id:min(instance_id+args.minibatch_size,len(train_Y))])
 
-
-                # if instance_id==1:
-                #     break
-
             print "epoch " + str(epoch) + " end in " + str(time.time() - then)
 
             print "evaluating valid current learning rate " + str(model.lr)

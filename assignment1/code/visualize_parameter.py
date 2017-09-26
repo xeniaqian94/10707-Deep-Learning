@@ -20,7 +20,6 @@ for i in np.arange(int(model.W[1].shape[0])):
     row=i/10
     col=i%10
     this_array=np.asarray(model.W[1][i]).reshape(np.sqrt(len(model.W[1][i])),np.sqrt(len(model.W[1][i])))
-    # im = Image.fromarray(this_array)
     axarr[row,col].imshow(this_array)
     axarr[row, col].axis('off')
 

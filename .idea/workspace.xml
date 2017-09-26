@@ -2,13 +2,404 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="63ef14c8-d68e-4be8-a9a5-73fe6216a88c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assignment1/plot/sea.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assignment1/code/6ab_load_ce_cr_avg_by_num_samply.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assignment1/code/6d_lr.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assignment1/code/train_minibatch.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assignment1/code/visualize_parameter.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/_ce.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/_cr.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/model" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/model_1506383737" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/model_1506387806" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/model_1506387806_lr_0.1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/model_1506387806_lr_0.1_lr_0.1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/model_1506388334" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/model_1506388334_lr_0.1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/model_1506388334_lr_0.1_lr_0.1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/model_1506388842" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/model_1506388842_lr_0.1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/model_1506388842_lr_0.1_lr_0.1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/model_1506389365" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/model_1506389365_lr_0.1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/model_1506389365_lr_0.1_lr_0.1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/model_1506389922" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/model_1506389922_lr_0.1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/model_1506389922_lr_0.1_lr_0.1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/model_1506392374" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/model_1506392919" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/model_1506393431" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/model_1506393959" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/model_1506394496" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/model_1506395001" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/model_1506395529" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/model_1506396051" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/model_1506396577" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/model_1506397107" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/model_1506397634" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/model_1506398153" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/model_1506398680_lr_0.01" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/model_1506399204_lr_0.2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/model_1506399727_lr_0.5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/model_1506423562_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/model_1506423600_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/model_1506423662_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/model_1506423676_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/model_1506423696_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/model_1506423715_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/model_1506423828_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/model_1506423965_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/model_1506423998_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/model_1506425302_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/model_1506425742_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/model_1506425752_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/model_1506425994_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/model_1506426418_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/model_1506426431_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/model_1506426593_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/model_1506426689_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/model_1506426740_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/model_1506426954_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/model_1506427264_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/model_1506427288_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/model_1506427447_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/model_1506427568_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/model_1506427605_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/model_1506428840_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/model_1506428977_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/model_1506429357_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/model_1506429792_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_test" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_test_1506383550" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_test_1506383737" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_test_1506387806" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_test_1506387806_lr_0.1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_test_1506388334" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_test_1506388334_lr_0.1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_test_1506388842" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_test_1506388842_lr_0.1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_test_1506389365" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_test_1506389365_lr_0.1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_test_1506389922" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_test_1506389922_lr_0.1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_test_1506392374_lr_0.01" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_test_1506392919_lr_0.2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_test_1506393431_lr_0.5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_test_1506393959_lr_0.01" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_test_1506394496_lr_0.2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_test_1506395001_lr_0.5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_test_1506395529_lr_0.01" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_test_1506396051_lr_0.2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_test_1506396577_lr_0.5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_test_1506397107_lr_0.01" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_test_1506397634_lr_0.2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_test_1506398153_lr_0.5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_test_1506398680_lr_0.01" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_test_1506399204_lr_0.2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_test_1506399727_lr_0.5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_test_1506423562_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_test_1506423600_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_test_1506423662_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_test_1506423676_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_test_1506423696_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_test_1506423715_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_test_1506423828_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_test_1506423965_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_test_1506423998_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_test_1506425302_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_test_1506425742_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_test_1506425752_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_test_1506425994_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_test_1506426418_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_test_1506426431_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_test_1506426593_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_test_1506426689_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_test_1506426740_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_test_1506426954_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_test_1506427264_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_test_1506427288_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_test_1506427447_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_test_1506427568_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_test_1506427605_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_test_1506428840_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_test_1506428977_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_test_1506429357_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_test_1506429792_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_train" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_train_1506383550" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_train_1506383737" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_train_1506387806" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_train_1506387806_lr_0.1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_train_1506388334" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_train_1506388334_lr_0.1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_train_1506388842" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_train_1506388842_lr_0.1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_train_1506389365" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_train_1506389365_lr_0.1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_train_1506389922" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_train_1506389922_lr_0.1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_train_1506392374_lr_0.01" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_train_1506392919_lr_0.2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_train_1506393431_lr_0.5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_train_1506393959_lr_0.01" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_train_1506394496_lr_0.2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_train_1506395001_lr_0.5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_train_1506395529_lr_0.01" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_train_1506396051_lr_0.2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_train_1506396577_lr_0.5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_train_1506397107_lr_0.01" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_train_1506397634_lr_0.2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_train_1506398153_lr_0.5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_train_1506398680_lr_0.01" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_train_1506399204_lr_0.2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_train_1506399727_lr_0.5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_train_1506423562_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_train_1506423600_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_train_1506423662_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_train_1506423676_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_train_1506423696_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_train_1506423715_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_train_1506423828_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_train_1506423965_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_train_1506423998_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_train_1506425302_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_train_1506425742_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_train_1506425752_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_train_1506425994_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_train_1506426418_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_train_1506426431_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_train_1506426593_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_train_1506426689_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_train_1506426740_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_train_1506426954_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_train_1506427264_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_train_1506427288_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_train_1506427447_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_train_1506427568_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_train_1506427605_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_train_1506428840_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_train_1506428977_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_train_1506429357_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_train_1506429792_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_valid" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_valid_1506383550" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_valid_1506383737" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_valid_1506387806" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_valid_1506387806_lr_0.1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_valid_1506388334" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_valid_1506388334_lr_0.1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_valid_1506388842" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_valid_1506388842_lr_0.1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_valid_1506389365" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_valid_1506389365_lr_0.1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_valid_1506389922" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_valid_1506389922_lr_0.1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_valid_1506392374_lr_0.01" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_valid_1506392919_lr_0.2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_valid_1506393431_lr_0.5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_valid_1506393959_lr_0.01" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_valid_1506394496_lr_0.2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_valid_1506395001_lr_0.5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_valid_1506395529_lr_0.01" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_valid_1506396051_lr_0.2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_valid_1506396577_lr_0.5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_valid_1506397107_lr_0.01" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_valid_1506397634_lr_0.2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_valid_1506398153_lr_0.5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_valid_1506398680_lr_0.01" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_valid_1506399204_lr_0.2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_valid_1506399727_lr_0.5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_valid_1506423562_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_valid_1506423600_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_valid_1506423662_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_valid_1506423676_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_valid_1506423696_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_valid_1506423715_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_valid_1506423828_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_valid_1506423965_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_valid_1506423998_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_valid_1506425302_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_valid_1506425742_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_valid_1506425752_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_valid_1506425994_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_valid_1506426418_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_valid_1506426431_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_valid_1506426593_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_valid_1506426689_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_valid_1506426740_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_valid_1506426954_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_valid_1506427264_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_valid_1506427288_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_valid_1506427447_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_valid_1506427568_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_valid_1506427605_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_valid_1506428840_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_valid_1506428977_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_valid_1506429357_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_ce_valid_1506429792_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_test_1506383550" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_test_1506383737" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_test_1506387806" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_test_1506387806_lr_0.1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_test_1506388334" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_test_1506388334_lr_0.1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_test_1506388842" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_test_1506388842_lr_0.1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_test_1506389365" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_test_1506389365_lr_0.1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_test_1506389922" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_test_1506389922_lr_0.1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_test_1506392374_lr_0.01" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_test_1506392919_lr_0.2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_test_1506393431_lr_0.5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_test_1506393959_lr_0.01" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_test_1506394496_lr_0.2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_test_1506395001_lr_0.5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_test_1506395529_lr_0.01" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_test_1506396051_lr_0.2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_test_1506396577_lr_0.5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_test_1506397107_lr_0.01" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_test_1506397634_lr_0.2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_test_1506398153_lr_0.5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_test_1506398680_lr_0.01" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_test_1506399204_lr_0.2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_test_1506399727_lr_0.5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_test_1506423562_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_test_1506423600_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_test_1506423662_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_test_1506423676_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_test_1506423696_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_test_1506423715_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_test_1506423828_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_test_1506423965_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_test_1506423998_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_test_1506425302_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_test_1506425742_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_test_1506425752_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_test_1506425994_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_test_1506426418_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_test_1506426431_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_test_1506426593_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_test_1506426689_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_test_1506426740_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_test_1506426954_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_test_1506427264_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_test_1506427288_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_test_1506427447_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_test_1506427568_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_test_1506427605_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_test_1506428840_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_test_1506428977_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_test_1506429357_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_test_1506429792_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_train_1506383550" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_train_1506383737" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_train_1506387806" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_train_1506387806_lr_0.1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_train_1506388334" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_train_1506388334_lr_0.1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_train_1506388842" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_train_1506388842_lr_0.1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_train_1506389365" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_train_1506389365_lr_0.1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_train_1506389922" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_train_1506389922_lr_0.1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_train_1506392374_lr_0.01" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_train_1506392919_lr_0.2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_train_1506393431_lr_0.5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_train_1506393959_lr_0.01" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_train_1506394496_lr_0.2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_train_1506395001_lr_0.5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_train_1506395529_lr_0.01" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_train_1506396051_lr_0.2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_train_1506396577_lr_0.5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_train_1506397107_lr_0.01" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_train_1506397634_lr_0.2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_train_1506398153_lr_0.5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_train_1506398680_lr_0.01" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_train_1506399204_lr_0.2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_train_1506399727_lr_0.5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_train_1506423562_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_train_1506423600_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_train_1506423662_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_train_1506423676_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_train_1506423696_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_train_1506423715_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_train_1506423828_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_train_1506423965_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_train_1506423998_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_train_1506425302_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_train_1506425742_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_train_1506425752_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_train_1506425994_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_train_1506426418_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_train_1506426431_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_train_1506426593_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_train_1506426689_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_train_1506426740_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_train_1506426954_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_train_1506427264_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_train_1506427288_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_train_1506427447_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_train_1506427568_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_train_1506427605_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_train_1506428840_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_train_1506428977_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_train_1506429357_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_train_1506429792_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_valid_1506383550" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_valid_1506383737" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_valid_1506387806" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_valid_1506387806_lr_0.1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_valid_1506388334" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_valid_1506388334_lr_0.1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_valid_1506388842" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_valid_1506388842_lr_0.1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_valid_1506389365" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_valid_1506389365_lr_0.1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_valid_1506389922" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_valid_1506389922_lr_0.1" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_valid_1506392374_lr_0.01" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_valid_1506392919_lr_0.2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_valid_1506393431_lr_0.5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_valid_1506393959_lr_0.01" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_valid_1506394496_lr_0.2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_valid_1506395001_lr_0.5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_valid_1506395529_lr_0.01" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_valid_1506396051_lr_0.2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_valid_1506396577_lr_0.5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_valid_1506397107_lr_0.01" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_valid_1506397634_lr_0.2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_valid_1506398153_lr_0.5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_valid_1506398680_lr_0.01" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_valid_1506399204_lr_0.2" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_valid_1506399727_lr_0.5" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_valid_1506423562_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_valid_1506423600_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_valid_1506423662_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_valid_1506423676_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_valid_1506423696_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_valid_1506423715_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_valid_1506423828_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_valid_1506423965_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_valid_1506423998_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_valid_1506425302_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_valid_1506425742_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_valid_1506425752_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_valid_1506425994_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_valid_1506426418_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_valid_1506426431_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_valid_1506426593_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_valid_1506426689_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_valid_1506426740_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_valid_1506426954_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_valid_1506427264_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_valid_1506427288_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_valid_1506427447_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_valid_1506427568_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_valid_1506427605_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_valid_1506428840_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_valid_1506428977_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_valid_1506429357_" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/assignment1/dump/plot_epoch_cr_valid_1506429792_" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assignment1/code/train.py" afterPath="$PROJECT_DIR$/assignment1/code/train.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assignment1/code/train_minibatch.py" afterPath="$PROJECT_DIR$/assignment1/code/train_minibatch.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assignment1/code/visualize_parameter.py" afterPath="$PROJECT_DIR$/assignment1/code/visualize_parameter.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -32,11 +423,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="train.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="train.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assignment1/code/train.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+            <state relative-caret-position="408">
+              <caret line="395" column="0" lean-forward="false" selection-start-line="395" selection-start-column="0" selection-end-line="395" selection-end-column="0" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
                 <element signature="e#3127#3770#0" expanded="false" />
@@ -49,8 +440,8 @@
       <file leaf-file-name="visualize_parameter.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assignment1/code/visualize_parameter.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+            <state relative-caret-position="270">
+              <caret line="18" column="45" lean-forward="false" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="45" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
@@ -61,8 +452,8 @@
       <file leaf-file-name="train_minibatch.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assignment1/code/train_minibatch.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="326" column="172" lean-forward="false" selection-start-line="325" selection-start-column="12" selection-end-line="326" selection-end-column="172" />
+            <state relative-caret-position="421">
+              <caret line="281" column="77" lean-forward="false" selection-start-line="281" selection-start-column="77" selection-end-line="281" selection-end-column="77" />
               <folding>
                 <element signature="e#2055#3128#0" expanded="false" />
                 <element signature="e#3180#6256#0" expanded="false" />
@@ -83,11 +474,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="6d_lr.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="6d_lr.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assignment1/code/6d_lr.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="646">
-              <caret line="51" column="54" lean-forward="true" selection-start-line="51" selection-start-column="54" selection-end-line="51" selection-end-column="54" />
+            <state relative-caret-position="405">
+              <caret line="27" column="59" lean-forward="false" selection-start-line="27" selection-start-column="59" selection-end-line="27" selection-end-column="59" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -119,11 +510,11 @@
         <option value="$PROJECT_DIR$/assignment1/code/visualize_data.py" />
         <option value="$PROJECT_DIR$/assignment1/code/Model.py" />
         <option value="$PROJECT_DIR$/assignment1/code/load_ce_cr_avg_by_num_samply.py" />
-        <option value="$PROJECT_DIR$/assignment1/code/visualize_parameter.py" />
-        <option value="$PROJECT_DIR$/assignment1/code/train.py" />
-        <option value="$PROJECT_DIR$/assignment1/code/train_minibatch.py" />
         <option value="$PROJECT_DIR$/assignment1/code/train_SGD.py" />
         <option value="$PROJECT_DIR$/assignment1/code/6d_lr.py" />
+        <option value="$PROJECT_DIR$/assignment1/code/visualize_parameter.py" />
+        <option value="$PROJECT_DIR$/assignment1/code/train_minibatch.py" />
+        <option value="$PROJECT_DIR$/assignment1/code/train.py" />
       </list>
     </option>
   </component>
@@ -407,11 +798,11 @@
     <frame x="-184" y="-1023" width="1773" height="980" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24985899" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1895093" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2151482" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20856202" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -504,35 +895,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assignment1/code/train.py">
+    <entry file="file://$PROJECT_DIR$/assignment1/code/6d_lr.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        <state relative-caret-position="405">
+          <caret line="27" column="59" lean-forward="false" selection-start-line="27" selection-start-column="59" selection-end-line="27" selection-end-column="59" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
-            <element signature="e#3127#3770#0" expanded="false" />
-            <element signature="e#3829#4329#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assignment1/code/visualize_parameter.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assignment1/code/train_minibatch.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="326" column="172" lean-forward="false" selection-start-line="325" selection-start-column="12" selection-end-line="326" selection-end-column="172" />
-          <folding>
-            <element signature="e#2055#3128#0" expanded="false" />
-            <element signature="e#3180#6256#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -547,12 +915,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assignment1/code/6d_lr.py">
+    <entry file="file://$PROJECT_DIR$/assignment1/code/visualize_parameter.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="51" column="54" lean-forward="true" selection-start-line="51" selection-start-column="54" selection-end-line="51" selection-end-column="54" />
+        <state relative-caret-position="270">
+          <caret line="18" column="45" lean-forward="false" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assignment1/code/train_minibatch.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="421">
+          <caret line="281" column="77" lean-forward="false" selection-start-line="281" selection-start-column="77" selection-end-line="281" selection-end-column="77" />
+          <folding>
+            <element signature="e#2055#3128#0" expanded="false" />
+            <element signature="e#3180#6256#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assignment1/code/train.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="395" column="0" lean-forward="false" selection-start-line="395" selection-start-column="0" selection-end-line="395" selection-end-column="0" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#3127#3770#0" expanded="false" />
+            <element signature="e#3829#4329#0" expanded="false" />
           </folding>
         </state>
       </provider>

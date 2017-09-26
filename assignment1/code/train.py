@@ -148,39 +148,14 @@ class Model:
 
         for i in range(1, self.L_num_layer + 2):
             delta_W_i = -1.0 * gradient_W[i] - 2.0 * self.lbd * self.W[i]
-            # delta_W_i = -1.0 * gradient_W[i]
-
-            # self.gradient_check(i,gradient_W[i],x,y)
-
-            if self.momentum > 0:
-                delta_W_i -= 1.0 * self.momentum * self.prev_W[i]
-
-            # self.new_W[i] = self.W[i] + self.lr * delta_W_i
-            self.W[i] = self.W[i] + self.lr * delta_W_i
-            # if self.sum_gradient_W[i] ==None:
-            #     self.sum_gradient_W[i]=delta_W_i
-            # else:
-            #     self.sum_gradient_W[i] +=delta_W_i
-
             delta_b_i = -1 * gradient_b[i] - 2.0 * self.lbd * self.b[i]
-            if self.momentum > 0:
-                delta_b_i -= 1.0 * self.momentum * self.prev_b[i]
 
-            # delta_b_i = -1.0 * gradient_b[i]
+            if not self.prev_W == None and self.momentum > 0:
+                delta_W_i -= 1.0 * self.momentum * self.prev_W[i]
+                delta_b_i-=1.0*self.momentum*self.prev_b[i]
 
-            # self.new_b[i] = self.b[i] + self.lr * delta_b_i
+            self.W[i] = self.W[i] + self.lr * delta_W_i
             self.b[i] = self.b[i] + self.lr * delta_b_i
-
-            # if self.sum_gradient_b[i] ==None:
-            #     self.sum_gradient_b[i]=delta_b_i
-            # else:
-            #     self.sum_gradient_b[i] +=delta_b_i
-
-            # print "weight updated here! are the new_W and W equal? "
-            # print self.new_W[1]==self.W[1]
-            # print (np.all(self.new_W[1]==self.W[1]))
-            # print str(self.new_W[1][:3,:3])
-            # print str(self.W[1][:3,:3])
 
         self.prev_W = gradient_W
         self.prev_b = gradient_b
@@ -239,16 +214,8 @@ class Model:
 
             # gradient_W[k]=np.dot(gradient_a[k],h[k-1].T)
             gradient_W[k] = np.einsum('ki,jk->kij', gradient_a[k], h[k - 1])
-
             gradient_b[k] = gradient_a[k]
-
-            # raw_input(
-            #     str(k) + "  self.W[k]  gradient_a[k] \n" + str(self.W[k].shape) + " " + str(gradient_a[k].shape))
-
             gradient_h[k - 1] = np.dot(gradient_a[k], self.W[k]).T
-
-            # raw_input(str(k)+" np.multiply(gradient_h[k - 1], derivative_sigmoid(h[k - 1]) " + str(gradient_h[k - 1].shape)+" "+str(h[k-1].shape))
-
             gradient_a[k - 1] = np.multiply(gradient_h[k - 1], derivative_sigmoid(h[k - 1])).T
             # raw_input(str(k)+" gradient_a[k - 1] \n"+str(gradient_a[k - 1]))
 
@@ -256,39 +223,18 @@ class Model:
         # print gradient_b
 
         for i in range(1, self.L_num_layer + 2):
-            # raw_input("delta_W_i = -1.0 * gradient_W[i] - 2.0 * self.lbd * self.W[i] "+str(gradient_W[i].shape))
             delta_W_i = -1.0 * np.mean(gradient_W[i], axis=0) - 2.0 * self.lbd * self.W[i]
-            # delta_W_i = -1.0 * gradient_W[i]
-
-            # self.gradient_check(i,gradient_W[i],x,y)
-
-            # self.new_W[i] = self.W[i] + self.lr * delta_W_i
-            self.W[i] = self.W[i] + self.lr * delta_W_i
-            # if self.sum_gradient_W[i] ==None:
-            #     self.sum_gradient_W[i]=delta_W_i
-            # else:
-            #     self.sum_gradient_W[i] +=delta_W_i
-
             delta_b_i = -1 * np.mean(gradient_b[i], axis=0) - 2.0 * self.lbd * self.b[i]
 
-            # delta_b_i = -1.0 * gradient_b[i]
+            if not self.prev_W == None and self.momentum > 0:
+                delta_W_i -= 1.0 * self.momentum * self.prev_W[i]
+                delta_b_i -= 1.0 * self.momentum * self.prev_b[i]
 
-            # self.new_b[i] = self.b[i] + self.lr * delta_b_i
+            self.W[i] = self.W[i] + self.lr * delta_W_i
             self.b[i] = self.b[i] + self.lr * delta_b_i
 
-            # print str(i)+" "+str(self.b[i].shape)
-
-            # if self.sum_gradient_b[i] ==None:
-            #     self.sum_gradient_b[i]=delta_b_i
-            # else:
-            #     self.sum_gradient_b[i] +=delta_b_i
-
-
-            # print "weight updated here! are the new_W and W equal? "
-            # print self.new_W[1]==self.W[1]
-            # print (np.all(self.new_W[1]==self.W[1]))
-            # print str(self.new_W[1][:3,:3])
-            # print str(self.W[1][:3,:3])
+        self.prev_W = gradient_W
+        self.prev_b = gradient_b
 
     def update_minibatch(self, X, Y):  # y is the final labely
         f_X, a, h = self.forward_minibatch(X)
@@ -345,7 +291,7 @@ class Model:
 
 if __name__ == "__main__":
     def plot_curve(label=""):
-        leading_label = sys.argv[0].split(".")[0]
+        leading_label = sys.argv[0].split(".")[0]+"_"+int(time.time())
 
         # plt.plot(np.arange(len(plot_epoch_ce_train)), np.asarray(plot_epoch_ce_train), label="train")
         # plt.plot(np.arange(len(plot_epoch_ce_valid)), np.asarray(plot_epoch_ce_valid), label="valid")
@@ -438,7 +384,7 @@ if __name__ == "__main__":
             print "epoch " + str(epoch) + " start "
             then = time.time()
 
-            if args.minibarch_size==1:
+            if args.minibatch_size==1:
                 for instance_id in range(train_X.shape[0]):
                     if (instance_id % 1000 == 0):
                         print "sgd instance id " + str(instance_id)
@@ -454,9 +400,6 @@ if __name__ == "__main__":
             then = time.time()
             cross_entropy, classification_error = model.eval_valid(valid_X, valid_Y)
             # if old_classification_error < cross_entropy or old_classification_error < classification_error:
-            if epoch > 15:
-                model.lr = 0.01
-                # model.lr=model.lr*0.1
             plot_epoch_ce_valid += [cross_entropy]
             plot_epoch_cr_valid += [classification_error]
             print "cross_entropy classification_error valid " + str(cross_entropy) + " " + str(classification_error)
