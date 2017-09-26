@@ -2,7 +2,7 @@ import pickle
 import sys
 import matplotlib.pyplot as plt
 import numpy as np
-
+from train import Model
 
 model=pickle.load(open(sys.argv[1],"r"))
 
