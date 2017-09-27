@@ -20,6 +20,8 @@ parameter_name_value['hidden_layer_1_dimension']=[ 20,50,100,200,300,400,500]
 parameter_name_value['epoch']=[20,30,50,70,100,125,150,200,300]
 parameter_name_value['lbd']=[0.001,0.002,0.003,0.004,0.005,0.007,0.01]
 
+parameter_name_value['activation']=['sigmoid','tanh','ReLU']
+
 
 # for lr in 0.01 0.02 0.03 0.04 0.05 0.07 0.09 0.1 0.2 0.3 0.4 0.5 0.7; do nohup condor_run "python train.py -lr $lr $stringg"  & done
 #
@@ -33,9 +35,9 @@ parameter_name_value['lbd']=[0.001,0.002,0.003,0.004,0.005,0.007,0.01]
 
 for (metric,metric_full_name) in [('ce',"Average Cross Entropy "), ('cr',"Classification Error (in percentage) ")]:
     for value in parameter_name_value[parameter]:
-        filename=[filename for filename in files if re.match(".*"+str(parameter)+"_" + str(value) + "_hidden_layer_2_dimension_100$",filename) and "valid" in filename and metric in filename][0]
+        # filename=[filename for filename in files if re.match(".*"+str(parameter)+"_" + str(value) + "_hidden_layer_2_dimension_100$",filename) and "valid" in filename and metric in filename][0]
 
-        # filename = [filename for filename in files if re.match(".*" + str(parameter) + "_" + str(value) + "$",filename) and "valid" in filename and metric in filename][0]
+        filename = [filename for filename in files if re.match(".*" + str(parameter) + "_" + str(value) + "$",filename) and "valid" in filename and metric in filename][0]
 
         this_list=np.asarray(pickle.load(open(dir_file_path + filename, "r")))
         if metric == "cr":

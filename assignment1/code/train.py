@@ -76,7 +76,7 @@ def unison_shuffled_copies(a, b):
 
 class Model:
     def __init__(self, L_num_layer, dimension_list, lr, lbd,
-                 momentum):  # here len(dimension_list) should equal to num_layer+2
+                 momentum, batch_normalization):  # here len(dimension_list) should equal to num_layer+2
         assert L_num_layer + 2 == len(dimension_list)
         self.L_num_layer = L_num_layer  # num_layer=L
         self.W = [[]]
@@ -93,16 +93,26 @@ class Model:
         self.prev_W = None
         self.prev_b = None
         self.momentum = momentum
-        self.gamma = 1
-        self.beta = 0
+        self.gamma = [[]]
+        self.prev_gamma = [[]]
+        self.beta = [[]]
+        self.prev_beta = [[]]
+        self.global_mean = [[]]
+        self.global_variance = [[]]
+        self.batch_normalization = batch_normalization
 
-        print dimension_list
         self.num_class = dimension_list[-1]
 
         for i in range(1, self.L_num_layer + 2):
             self.W += [np.random.normal(0, 0.17, (dimension_list[i], dimension_list[i - 1]))]
             self.W_epsilon += [np.random.normal(0, 1e-5, (dimension_list[i], dimension_list[i - 1]))]
             self.b += [np.random.normal(0, 1e-10, dimension_list[i])]
+            # print self.gamma
+            self.gamma += [np.random.normal(0, 1, dimension_list[i])]
+            self.beta += [np.random.normal(0, 1e-10, dimension_list[i])]
+
+            self.global_mean += [np.random.normal(0, 1e-10, dimension_list[i])]
+            self.global_variance += [np.random.normal(0, 1, dimension_list[i])]
             # self.gradient_W=np.zeros(self.W.shape)
             # self.gradient_b=np.zeros(self.b.shape)
             self.new_W = [None] * len(self.W)
@@ -214,51 +224,61 @@ class Model:
             f_x, a, h = self.forward(x, ReLU)
             self.back_prop(x, y, f_x, a, h, deact_ReLU)
 
-    def forward_minibatch(self, X, activation=sigmoid, batch_normalization=False):
+    def forward_minibatch(self, X, activation=sigmoid):
 
         # print "within forward X.shape "+str(X.shape)
 
         h = [X.T]
         a = [[]]
-        BN = [[]]
+        variable_cache = [[]]
+        out = [[]]
 
         for i in range(1, self.L_num_layer + 2):
 
-            # raw_input("np.dot(self.W[i], h[i - 1]) + np.tile(self.b[i].reshape(self.b[i].shape[0], 1), (1, h[i - 1].shape[1])\n"+str(self.W[i].shape)+" "+str(h[i-1].shape))
-            # raw_input("self.b[i].reshape "+str(self.b[i].shape)+" "+str(h[i - 1].shape[-1]))
             a += [np.dot(self.W[i], h[i - 1]) + np.tile(self.b[i].reshape(self.b[i].shape[0], 1),
                                                         (1, h[i - 1].shape[
                                                             -1]))]  # resulting a is #hidden unit * minibatch size
 
-            if batch_normalization:
-                BN += self.bn(a)
+            if self.batch_normalization:
+                X = a[-1].T
 
-            # mu = 1 / N * np.sum(h, axis=0)  # Size (H,)
-            # sigma2 = 1 / N * np.sum((h - mu) ** 2, axis=0)  # Size (H,)
-            # hath = (h - mu) * (sigma2 + epsilon) ** (-1. / 2.)
-            # y = gamma * hath + beta
+                mu = np.mean(X, axis=0)  # (dimension,)
+                # print "mu shape " + str(mu.shape)
+                var = np.var(X, axis=0)
 
+                X_norm = (X - mu) / np.sqrt(var + 1e-8)
+                # print "X_norm shape " + str(X_norm.shape)
+                # print "self.gamma[i] " + str(self.gamma[i].shape)
+                # print "np.tile(self.gamma[i],(1,X_norm.shape[-1])) shape " + str(
+                #     np.tile(self.gamma[i], (X_norm.shape[0], 1)).shape)
+                # print "np.tile(self.beta[i],(1,X_norm.shape[-1])) shape " + str(
+                #     np.tile(self.beta[i], (X_norm.shape[0], 1)).shape)
 
-            # print "current a_" + str(i) + " shape " + str(a[-1].shape)
-            if i == self.L_num_layer + 1:
-                break
+                out += [
+                    np.tile(self.gamma[i], (X_norm.shape[0], 1)) * X_norm + np.tile(self.beta[i], (X_norm.shape[0], 1))]
 
-            if batch_normalization:
-                h += [activation(BN[i])]
+                variable_cache += [(a[-1], X_norm, mu, var, self.gamma[i], self.beta[i])]
+
+                self.global_mean[i] = 0.9 * self.global_mean[i] + 0.1 * mu
+                self.global_variance[i] = 0.9 * self.global_variance[i] + 0.1 * var
+
+                if i == self.L_num_layer + 1:
+                    break
+
+                h += [activation(out[-1].T)]  # h_k=g(a_k)
             else:
-                h += [activation(a[i])]  # h_k=g(a_k)
-                # print "current h_" + str(i) + " shape " + str(h[-1].shape)
-        # print "final a_" + str(i) + " shape " + str(a[-1].shape)
-        if batch_normalization:
+                if i==self.L_num_layer+1:
+                    break
+                h+=[activation(a[-1].T)]
 
-            softmax_over_class = softmax(BN[-1]).T  # size num_instances * num_class
+        if self.batch_normalization:
+            softmax_over_class = softmax(out[-1].T).T
         else:
-            softmax_over_class = softmax(a[-1]).T
-        # print "softmax value " + str(softmax_over_class) + " " + str(np.sum(softmax_over_class))
+            softmax_over_class = softmax(a[-1].T).T
 
-        return softmax_over_class, a, h, BN
+        return softmax_over_class, a, h, out, variable_cache
 
-    def back_prop_minibatch(self, X, Y, f_X, a, h, deactivation=derivative_sigmoid, batch_normalization=False):
+    def back_prop_minibatch(self, X, Y, f_X, a, h, out, variable_cache, deactivation=derivative_sigmoid):
         # print "within back_prop"
         num_instance = X.shape[0]
 
@@ -273,42 +293,103 @@ class Model:
         gradient_W = [None] * (self.L_num_layer + 2)
         gradient_b = [None] * (self.L_num_layer + 2)
         gradient_h = [None] * (self.L_num_layer + 1)
+        gradient_out = [None] * (self.L_num_layer + 2)
 
-        gradient_a[self.L_num_layer + 1] = -1 * (e_y - f_X)  # num_instance * num_class
+        gradient_gamma = [None] * (self.L_num_layer + 2)
+        gradient_beta = [None] * (self.L_num_layer + 2)
 
-        # raw_input("gradient_a \n"+str(gradient_a[self.L_num_layer + 1]))
+        # gradient_a[self.L_num_layer + 1] = -1 * (e_y - f_X)  # num_instance * num_class
+        #
+        # for k in range(self.L_num_layer + 1, 0, -1):
+        #     gradient_W[k] = np.einsum('ki,jk->kij', gradient_a[k], h[k - 1])
+        #     gradient_b[k] = gradient_a[k]
+        #     gradient_h[k - 1] = np.dot(gradient_a[k], self.W[k]).T
+        #     gradient_a[k - 1] = np.multiply(gradient_h[k - 1], deactivation(h[k - 1], a[k - 1])).T
+
+        gradient_out[self.L_num_layer + 1] = -1 * (e_y - f_X)  # num_instance * num_class
+        gradient_a[self.L_num_layer + 1] = -1 * (e_y - f_X)
 
         for k in range(self.L_num_layer + 1, 0, -1):
-            # raw_input(str(k)+" gradient_a[k] h[k-1].T dot product \n" + str(gradient_a[k].shape)+" "+str(h[k-1].shape))
 
-            # gradient_W[k]=np.dot(gradient_a[k],h[k-1].T)
-            gradient_W[k] = np.einsum('ki,jk->kij', gradient_a[k], h[k - 1])
+            if self.batch_normalization:
+                ak, X_norm, mu, var, this_gamma, this_beta = variable_cache[k]
+
+                X = ak.T
+
+                N, D = X.shape
+
+                X_mu = X - mu
+
+                std_inv = 1. / np.sqrt(var + 1e-8)
+
+                danorm = gradient_out[k] * this_gamma
+
+                dvar = np.sum(danorm * X_mu, axis=0) * -.5 * std_inv ** 3
+
+                dmu = np.sum(danorm * -std_inv, axis=0) + dvar * np.mean(-2. * X_mu, axis=0)
+
+                gradient_a[k] = ((danorm * std_inv) + (dvar * 2 * X_mu / N) + (dmu / N)).T
+                gradient_gamma[k] = np.sum(gradient_out[k] * X_norm, axis=0)
+                gradient_beta[k] = np.sum(gradient_out[k], axis=0)
+
+            gradient_W[k] = np.einsum('ik,jk->kij', gradient_a[k], h[k - 1])
+
             gradient_b[k] = gradient_a[k]
-            gradient_h[k - 1] = np.dot(gradient_a[k], self.W[k]).T
-            gradient_a[k - 1] = np.multiply(gradient_h[k - 1], deactivation(h[k - 1], a[k - 1])).T
-            # raw_input(str(k)+" gradient_a[k - 1] \n"+str(gradient_a[k - 1]))
 
-        # eliminate the regularization term here
-        # print gradient_b
+            if k==1:
+                break
+                
+            gradient_h[k - 1] = np.dot(self.W[k].T, gradient_a[k])
+            if self.batch_normalization:
+                # print h[k - 1].shape, gradient_h[k - 1].shape
+                # print out[k-1],h[k-1].shape
+                gradient_out[k - 1] = np.multiply(gradient_h[k - 1], deactivation(h[k - 1], out[k - 1].T)).T
+            else:
+                gradient_a[k-1]=np.multiply(gradient_h[k - 1], deactivation(h[k - 1], a[k - 1])).T
+
+        self.prev_W = [[]]
+        self.prev_b = [[]]
 
         for i in range(1, self.L_num_layer + 2):
             delta_W_i = -1.0 * np.mean(gradient_W[i], axis=0) - 2.0 * self.lbd * self.W[i]
-            delta_b_i = -1 * np.mean(gradient_b[i], axis=0) - 2.0 * self.lbd * self.b[i]
+            # print "gradient b [i] shape "+str(gradient_b[i].shape)
+            delta_b_i = -1 * np.mean(gradient_b[i], axis=1) - 2.0 * self.lbd * self.b[i]
+            # print "gradient_gamma[i] " + str(gradient_gamma[i].shape)
 
-            if not self.prev_W == None and self.momentum > 0:
+            if self.batch_normalization:
+                delta_gamma_i = -1.0 * gradient_gamma[i]
+                delta_beta_i = -1.0 * gradient_beta[i]
+
+            if len(self.prev_W) == len(self.W) and self.momentum > 0:
                 delta_W_i -= 1.0 * self.momentum * self.prev_W[i]
                 delta_b_i -= 1.0 * self.momentum * self.prev_b[i]
+                if self.batch_normalization:
+                    delta_gamma_i -= 1.0 * self.momentum * self.prev_gamma[i]
+                    delta_beta_i -= 1.0 * self.momentum * self.prev_beta[i]
 
             self.W[i] = self.W[i] + self.lr * delta_W_i
             self.b[i] = self.b[i] + self.lr * delta_b_i
+            if self.batch_normalization:
+                self.gamma[i] = self.gamma[i] + self.lr * delta_gamma_i
+                self.beta[i] = self.beta[i] + self.lr * delta_beta_i
 
-        self.prev_W = gradient_W
-        self.prev_b = gradient_b
+            self.prev_W += [np.mean(gradient_W[i], axis=0)]
+            self.prev_b += [np.mean(gradient_b[i], axis=1)]
 
-    def update_minibatch(self, X, Y, activation=sigmoid, batch_normalization=False):  # y is the final labely
-        f_X, a, h = self.forward_minibatch(X, activation, batch_normalization)
+        if self.batch_normalization:
+            self.prev_gamma = gradient_gamma
+            self.prev_beta = gradient_beta
 
-        self.back_prop_minibatch(X, Y, f_X, a, h, batch_normalization)
+    def update_minibatch(self, X, Y, activation_str="sigmoid"):  # y is the final labely
+        if activation_str == "sigmoid":
+            f_X, a, h, out, variable_cache = self.forward_minibatch(X, sigmoid)
+            self.back_prop_minibatch(X, Y, f_X, a, h, out, variable_cache, derivative_sigmoid)
+        elif activation_str == "tanh":
+            f_X, a, h, out, variable_cache = self.forward_minibatch(X, tanh)
+            self.back_prop_minibatch(X, Y, f_X, a, h, out, variable_cache, deact_tanh)
+        elif activation_str == "ReLU":
+            f_X, a, h, out, variable_cache = self.forward_minibatch(X, ReLU)
+            self.back_prop_minibatch(X, Y, f_X, a, h, out, variable_cache, deact_ReLU)
 
     def reset_sum_gradient(self):
         self.sum_gradient_W = [None] * len(self.W)
@@ -318,7 +399,7 @@ class Model:
         self.old_W = self.W
         self.old_b = self.b
 
-    def eval_valid(self, valid_X, valid_Y, activation_str=sigmoid):
+    def eval_valid(self, valid_X, valid_Y, activation_str=sigmoid, minibatch=1):
 
         if activation_str == "sigmoid":
             activation = sigmoid
@@ -329,6 +410,7 @@ class Model:
 
         h = [valid_X.T]
         a = [[]]
+        out = [[]]
 
         for i in range(1, self.L_num_layer + 2):
             # print np.dot(self.W[i], h[i - 1]).shape
@@ -336,25 +418,35 @@ class Model:
             a += [
                 np.dot(self.W[i], h[i - 1]) + np.tile(self.b[i].reshape(self.b[i].shape[0], 1), (1, h[i - 1].shape[1]))]
             # print "current a_" + str(i) + " shape " + str(a[-1].shape)
-            if i == self.L_num_layer + 1:
-                break
-            h += [activation(a[i])]  # h_k=g(a_k)
-            # print "current h_" + str(i) + " shape " + str(h[-1].shape)
-        # print "final a_" + str(i) + " shape " + str(a[-1].shape)
 
-        softmax_over_class = softmax(a[-1]).T  # size num_instances * num_class
-        # print "softmax value " + str(softmax_over_class) + " " + str(np.sum(softmax_over_class))
+            if minibatch > 1 and self.batch_normalization:
+
+                X = a[-1].T
+
+                mu = np.mean(X, axis=0)  # (dimension,)
+
+                var = np.var(X, axis=0)
+
+                X_norm = (X - self.global_mean[i]) / np.sqrt(self.global_variance[i] + 1e-8)
+
+                out += [
+                    np.tile(self.gamma[i], (X_norm.shape[0], 1)) * X_norm + np.tile(self.beta[i], (X_norm.shape[0], 1))]
+
+                if i == self.L_num_layer + 1:
+                    break
+
+                h += [activation(out[-1].T)]  # h_k=g(a_k)
+
+        if minibatch > 1 and self.batch_normalization:
+            softmax_over_class = softmax(out[-1].T).T
+        else:
+            softmax_over_class = softmax(a[-1]).T
 
         one_hot_y = self.from_Y_onehot(valid_Y)
 
         # max_prob_class=np.sum(softmax_over_class, axis=1)
         classification_error = np.sum(np.argmax(softmax_over_class, axis=1) != (np.asarray(valid_Y))) * 1.0 / len(
             valid_Y)
-        # print "classification error calculation "
-        # print softmax_over_class[:5,:]
-        # print valid_Y[:5]
-        # print np.sum(np.argmax(softmax_over_class[:5,:], axis=1) != (np.asarray(valid_Y[:5]))) * 1.0 / len(
-        #     valid_Y)
 
         return -1.0 * np.sum(np.multiply(np.log(softmax_over_class), one_hot_y)) / softmax_over_class.shape[
             0], classification_error
@@ -365,6 +457,8 @@ class Model:
         one_hot_y = np.zeros([len(valid_Y), self.num_class])
         one_hot_y[row, col] = 1
         return one_hot_y
+
+        # def store_global_mean_variance(self, trainX):
 
 
 if __name__ == "__main__":
@@ -427,7 +521,7 @@ if __name__ == "__main__":
     parser.add_argument('-lbd', type=float, help="regularization term", default=0.001)
     parser.add_argument('-momentum', type=float, help="average gradient", default=0.5)
     parser.add_argument('-minibatch_size', type=int, help="minibatch_size", default=1)
-    parser.add_argument('-batch_normalization', type=bool, help="whether do batch normalization or not ", default=False)
+    parser.add_argument('-batch_normalization', type=bool, help="whether do batch normalization or not ", default=True)
     parser.add_argument('-activation', type=str, help="which activation to use ", default="sigmoid")
 
     # python train.py -minibatch_size 32 -batch_normalization True
@@ -462,7 +556,7 @@ if __name__ == "__main__":
     plot_epoch_cr_test = []
     speed = []
     model = Model(args.num_layer, [num_dimension, args.hidden_layer_1_dimension, args.num_class], args.lr, args.lbd,
-                  args.momentum)
+                  args.momentum, args.batch_normalization)
     if not args.hidden_layer_2_dimension == 0:
         args.num_layer = 2
         model = Model(args.num_layer,
@@ -488,28 +582,27 @@ if __name__ == "__main__":
                 for instance_id in range(0, train_X.shape[0], args.minibatch_size)[:-1]:
                     model.update_minibatch(train_X[instance_id:min(instance_id + args.minibatch_size, len(train_X))],
                                            train_Y[instance_id:min(instance_id + args.minibatch_size, len(train_Y))],
-                                           args.activation, args.batch_normalization)
+                                           args.activation)
             speed_in_secs = time.time() - then
             print "epoch " + str(epoch) + " end in " + str(speed_in_secs)
             speed += [speed_in_secs]
 
-            if args.batch_normalization:
-                model.store_global_mean_variance(train_X)
-
             print "evaluating valid current learning rate " + str(model.lr)
             then = time.time()
-            cross_entropy, classification_error = model.eval_valid(valid_X, valid_Y, args.activation)
+            cross_entropy, classification_error = model.eval_valid(valid_X, valid_Y, args.activation,
+                                                                   args.minibatch_size)
             # if old_classification_error < cross_entropy or old_classification_error < classification_error:
             plot_epoch_ce_valid += [cross_entropy]
             plot_epoch_cr_valid += [classification_error]
             print "cross_entropy classification_error valid " + str(cross_entropy) + " " + str(classification_error)
 
-            cross_entropy, classification_error = model.eval_valid(train_X, train_Y, args.activation)
+            cross_entropy, classification_error = model.eval_valid(train_X, train_Y, args.activation,
+                                                                   args.minibatch_size)
             plot_epoch_ce_train += [cross_entropy]
             plot_epoch_cr_train += [classification_error]
             print "cross_entropy classification_error train " + str(cross_entropy) + " " + str(classification_error)
 
-            cross_entropy, classification_error = model.eval_valid(test_X, test_Y, args.activation)
+            cross_entropy, classification_error = model.eval_valid(test_X, test_Y, args.activation, args.minibatch_size)
             plot_epoch_ce_test += [cross_entropy]
             plot_epoch_cr_test += [classification_error]
             print "cross_entropy classification_error test " + str(cross_entropy) + " " + str(classification_error)

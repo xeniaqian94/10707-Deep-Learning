@@ -16,15 +16,22 @@ fig=plt.figure()
 for (metric,metric_full_name) in [('ce',"Average Cross Entropy "), ('cr',"Classification Error (in percentage) ")]:
     this_metric_fold = dict()
     for (color,fold) in [("r",'train'), ("g",'valid'), ("b",'test')]:
+
+        # question 6d
         # for (lr,line_style) in [(0.1,"-."),(0.01,":"),(0.2,"--"),(0.5,"-")]:
         #     candidate_files = [filename for filename in files if re.match(".*lr_" + str(lr) + "$",filename) and fold in filename and metric in filename and str(lr) in filename]
 
-        for (lr,line_style) in [(0.0,"-."),(0.5,"--"),(0.9,"-")]:
-            candidate_files=[filename for filename in files if re.match(".*lr_0.01_momentum_" + str(lr) + "$",filename) and fold in filename and metric in filename and str(lr) in filename]
+        # question 6d2
+        # for (lr,line_style) in [(0.0,"-."),(0.5,"--"),(0.9,"-")]:
+        #     candidate_files=[filename for filename in files if re.match(".*lr_0.01_momentum_" + str(lr) + "$",filename) and fold in filename and metric in filename and str(lr) in filename]
 
-
+        # question 6e
         # for (lr,line_style) in [(20,"-."),(100,":"),(200,"--"),(500,"-")]:
         #     candidate_files = [filename for filename in files if re.match(".*lr_0.01_momentum_0.5_hidden_layer_1_dimension_" + str(lr) + "$",filename) and fold in filename and metric in filename and str(lr) in filename]
+
+        # question 6i
+        for (lr, line_style) in [('tanh', "-."),('sigmoid', ":"), ('ReLU', "--")]:
+            candidate_files = [filename for filename in files if re.match(".*lr_0.01_momentum_0.5_hidden_layer_2_dimension_100_activation_" + str(lr) + "*",filename) and fold in filename and metric in filename]
 
             count=0
             for ind,filename in enumerate(candidate_files):
@@ -33,13 +40,21 @@ for (metric,metric_full_name) in [('ce',"Average Cross Entropy "), ('cr',"Classi
                 if metric == "cr":
                     this_list = this_list * 100  # for percentage
                 print str(filename), str(type(this_list))
-                if not ind:
-                    this_metric_fold[fold] = this_list
-                else:
-                    if len(this_list)==len(this_metric_fold[fold]):
+                if len(this_list)==250:
+                    if not ind:
+                        this_metric_fold[fold] = this_list
                         count+=1
+                    else:
+                        if not len(this_list)==len(this_metric_fold[fold]):
+                            print len(this_list),len(this_metric_fold[fold])
+                            this_metric_fold[fold]=this_metric_fold[fold][:min(len(this_list),len(this_metric_fold[fold]))]
+                        count += 1
                         this_metric_fold[fold] += this_list
-                print metric,fold,this_list[:10],this_list[-10:]
+
+                    print metric,fold,this_list[:10],this_list[-10:]
+
+
+
             this_metric_fold[fold]/=count
             this_metric_fold[fold]=this_metric_fold[fold][:100]
 
