@@ -9,6 +9,7 @@ model=pickle.load(open(sys.argv[1],"r"))
 print len(model.W)
 print model.W[1].shape
 
+fig=plt.figure()
 f, axarr = plt.subplots(int(np.sqrt(model.W[1].shape[0])), int(np.sqrt(model.W[1].shape[0])))
 plt.gray()
 
@@ -22,9 +23,10 @@ for i in np.arange(int(model.W[1].shape[0])):
 
 
 f.subplots_adjust()
-
 plt.show()
-plt.savefig("../plot/"+sys.argv[1].split("/")[-1]+".png")
+fig.savefig("../plot/"+sys.argv[1].split("/")[-1]+".png")
+
+plt.cla()
 
 
 

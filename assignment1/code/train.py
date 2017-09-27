@@ -34,13 +34,14 @@ def derivative_sigmoid(g_a, a):
 
 
 def tanh(x):
-    print "using tanh " + str(x[:5])
-    print (np.exp(2 * x) - 1 / np.exp(2 * x) + 1)[:5]
-    return np.exp(2 * x) - 1 / np.exp(2 * x) + 1
+    # print "using tanh " + str(np.divide(np.exp(np.add(x, x)) - 1, np.exp(np.add(x, x)) + 1)[:5])
+    # print np.add(x,x)[:5]
+    # print (np.exp(np.add(x,x)) - 1 / np.exp(np.add(x,x)) + 1)[:5]
+    return np.divide(np.exp(np.add(x, x)) - 1, np.exp(np.add(x, x)) + 1)
 
 
 def deact_tanh(g_a, a):
-    print "using deact tanh " + str(g_a[:5])
+    # print "using deact tanh " + str(g_a[:5])
     return 1 - np.multiply(g_a, g_a)
 
 
@@ -99,9 +100,9 @@ class Model:
         self.num_class = dimension_list[-1]
 
         for i in range(1, self.L_num_layer + 2):
-            self.W += [np.random.normal(0, 1, (dimension_list[i], dimension_list[i - 1]))]
+            self.W += [np.random.normal(0, 0.17, (dimension_list[i], dimension_list[i - 1]))]
             self.W_epsilon += [np.random.normal(0, 1e-5, (dimension_list[i], dimension_list[i - 1]))]
-            self.b += [np.random.normal(0, 1, dimension_list[i])]
+            self.b += [np.random.normal(0, 1e-10, dimension_list[i])]
             # self.gradient_W=np.zeros(self.W.shape)
             # self.gradient_b=np.zeros(self.b.shape)
             self.new_W = [None] * len(self.W)
@@ -401,12 +402,12 @@ if __name__ == "__main__":
         # plt.show()
         # plt.savefig("../plot/classification_error_" + str(int(time.time())) + ".png")
 
-        pickle.dump(plot_epoch_cr_train, open("../dump/train"+leading_label+"_cr_" + label, "w"))
-        pickle.dump(plot_epoch_cr_valid, open("../dump/valid" + leading_label+"_cr_" + label, "w"))
-        pickle.dump(plot_epoch_cr_test, open("../dump/test" +leading_label+ "_cr_" + label, "w"))
+        pickle.dump(plot_epoch_cr_train, open("../dump/train" + leading_label + "_cr_" + label, "w"))
+        pickle.dump(plot_epoch_cr_valid, open("../dump/valid" + leading_label + "_cr_" + label, "w"))
+        pickle.dump(plot_epoch_cr_test, open("../dump/test" + leading_label + "_cr_" + label, "w"))
 
-        pickle.dump(model, open("../dump/_model_" + leading_label+"_"+label, "w"))
-        pickle.dump(speed, open("../dump/_speed_" + leading_label+"_"+label, "w"))
+        pickle.dump(model, open("../dump/_model_" + leading_label + "_" + label, "w"))
+        pickle.dump(speed, open("../dump/_speed_" + leading_label + "_" + label, "w"))
 
 
     np.seterr(all='raise')
@@ -422,9 +423,9 @@ if __name__ == "__main__":
     parser.add_argument('-num_class', type=int, default=10)
     parser.add_argument('-hidden_layer_1_dimension', type=int, default=100)
     parser.add_argument('-hidden_layer_2_dimension', type=int, default=0)
-    parser.add_argument('-lr', type=float, help="learning rate", default=0.1)
+    parser.add_argument('-lr', type=float, help="learning rate", default=0.01)
     parser.add_argument('-lbd', type=float, help="regularization term", default=0.001)
-    parser.add_argument('-momentum', type=float, help="average gradient", default=0.0)
+    parser.add_argument('-momentum', type=float, help="average gradient", default=0.5)
     parser.add_argument('-minibatch_size', type=int, help="minibatch_size", default=1)
     parser.add_argument('-batch_normalization', type=bool, help="whether do batch normalization or not ", default=False)
     parser.add_argument('-activation', type=str, help="which activation to use ", default="sigmoid")
@@ -515,7 +516,7 @@ if __name__ == "__main__":
 
             print "evaluating valid end in " + str(time.time() - then)
 
-            print model.W[1][:20, :20]
+            # print model.W[1][:20, :20]
 
     # except KeyboardInterrupt as e:
     #     plot_curve()
