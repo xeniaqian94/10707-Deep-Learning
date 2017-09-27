@@ -338,7 +338,7 @@ class Model:
 
             if k==1:
                 break
-                
+
             gradient_h[k - 1] = np.dot(self.W[k].T, gradient_a[k])
             if self.batch_normalization:
                 # print h[k - 1].shape, gradient_h[k - 1].shape
