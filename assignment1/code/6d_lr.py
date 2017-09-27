@@ -22,7 +22,6 @@ fig=plt.figure()
 for (metric,metric_full_name) in [('ce',"Average Cross Entropy "), ('cr',"Classification Error (in percentage) ")]:
     this_metric_fold = dict()
     for (color,fold) in [("r",'train'), ("g",'valid'), ("b",'test')]:
-
         for (lr,line_style) in [(0.1,"-."),(0.01,":"),(0.2,"--"),(0.5,"-")]:
             candidate_files=[filename for filename in files if "lr" in filename and fold in filename and metric in filename and str(lr) in filename]
             for ind,filename in enumerate(candidate_files):

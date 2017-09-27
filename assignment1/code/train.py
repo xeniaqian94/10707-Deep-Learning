@@ -330,7 +330,7 @@ class Model:
 
 if __name__ == "__main__":
     def plot_curve(label=""):
-        leading_label = sys.argv[0].split(".")[0] + "_" + str(int(time.time()))
+        # leading_label = sys.argv[0].split(".")[0] + "_" + str(int(time.time()))
 
         # plt.plot(np.arange(len(plot_epoch_ce_train)), np.asarray(plot_epoch_ce_train), label="train")
         # plt.plot(np.arange(len(plot_epoch_ce_valid)), np.asarray(plot_epoch_ce_valid), label="valid")
@@ -344,9 +344,9 @@ if __name__ == "__main__":
         # plt.show()
         # plt.savefig("../plot/cross_entropy_" + str(int(time.time())) + ".png")
 
-        pickle.dump(plot_epoch_ce_train, open("../dump/" + leading_label + "_ce_" + label, "w"))
-        pickle.dump(plot_epoch_ce_valid, open("../dump/" + leading_label + "_ce_" + label, "w"))
-        pickle.dump(plot_epoch_ce_test, open("../dump/" + leading_label + "_ce_" + label, "w"))
+        pickle.dump(plot_epoch_ce_train, open("../dump/train"  + "_ce_" + label, "w"))
+        pickle.dump(plot_epoch_ce_valid, open("../dump/valid" + "_ce_" + label, "w"))
+        pickle.dump(plot_epoch_ce_test, open("../dump/test" + "_ce_" + label, "w"))
 
         # plt.cla()
 
@@ -362,11 +362,12 @@ if __name__ == "__main__":
         # plt.show()
         # plt.savefig("../plot/classification_error_" + str(int(time.time())) + ".png")
 
-        pickle.dump(plot_epoch_cr_train, open("../dump/" + leading_label + "_cr_" + label, "w"))
-        pickle.dump(plot_epoch_cr_valid, open("../dump/" + leading_label + "_cr_" + label, "w"))
-        pickle.dump(plot_epoch_cr_test, open("../dump/" + leading_label + "_cr_" + label, "w"))
-        pickle.dump(model, open("../dump/" + leading_label + "_model_" + label, "w"))
-        pickle.dump(speed, open("../dump/" + leading_label + "_speed_" + label, "w"))
+        pickle.dump(plot_epoch_cr_train, open("../dump/train_cr_" + label, "w"))
+        pickle.dump(plot_epoch_cr_valid, open("../dump/valid" + "_cr_" + label, "w"))
+        pickle.dump(plot_epoch_cr_test, open("../dump/test" + "_cr_" + label, "w"))
+        
+        pickle.dump(model, open("../dump/_model_" + label, "w"))
+        pickle.dump(speed, open("../dump/_speed_" + label, "w"))
 
 
     np.seterr(all='raise')
