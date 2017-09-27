@@ -7,8 +7,7 @@ for lr in 0.01 0.1 0.2 0.5; do for iter in 1 2 3 4 5; do nohup condor_run "pytho
 for momentum in 0.0 0.5 0.9; do for iter in 1 2 3 4 5; do nohup condor_run "python train.py -momentum $momentum " & done done
 
 6e)
-for unit in 20 100 200 500; do for iter in 1 2 3 4 5; do nohup condor_run "python train.py -hidden_layer_1_dimension $unit " & done done
-
+for unit in 20 100 200 500; do for iter in 1 2 3 4 5; do nohup condor_run "python train.py -lr 0.01 -momentum 0.5 -hidden_layer_1_dimension $unit " & done done
 6f)
 
 stringg=" "
