@@ -1,0 +1,2 @@
+#!/bin/bash
+python train.py -hidden_layer_1_dimension 500  
