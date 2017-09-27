@@ -32,14 +32,9 @@ EXCEPT
 
 for unit in 20 50 100 200 300 400 500; do nohup condor_run "python train.py -lr 0.01 -momentum 0.2 -max_epoch 125 -hidden_layer_1_dimension $unit -hidden_layer_2_dimension $unit"  & done
 
-6h)
+6i)
 
-for iter in 1 2 3 4 5; do nohup condor_run "python train.py -activation tanh -momentum 0.5 " & done
+for activation in "sigmoid" "tanh" "ReLU"; do for iter in 1 2 3 4 5; do nohup condor_run "python train.py -lr 0.01 -momentum 0.5 -activation $activation" & done done
 
-for iter in 1 2 3 4 5; do nohup condor_run "python train.py -activation ReLU -momentum 0.5 " & done
+for activation in "sigmoid" "tanh" "ReLU"; do for iter in 1 2 3 4 5; do nohup condor_run "python train.py -lr 0.01 -momentum 0.5 -hidden_layer_2_dimension 100 -activation $activation " & done done
 
-for iter in 1 2 3 4 5; do nohup condor_run "python train.py -activation tanh -momentum 0.5 -hidden_layer_2_dimension 100" & done
-
-for iter in 1 2 3 4 5; do nohup condor_run "python train.py -activation ReLU -momentum 0.5 -hidden_layer_2_dimension 100" & done
-
- 
