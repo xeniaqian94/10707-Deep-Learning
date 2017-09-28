@@ -7,4 +7,13 @@ To run a backpropagation with cross-entropy error function for 1-layer neural ne
 	cd code; python train.py # here parameters are tuned to its best setting
 
 To run a backpropagation with cross-entropy error function for 2-layer network with SGD implementation,
-	cd code python 
+	cd code; python train.py -hidden_layer_2_dimension 100
+
+To run a minibatch of 32 with batch normalization, 
+	cd code; python train.py -minibatch_size 32 -batch_normalization True
+
+For more commands, 
+	vi code/README
+
+
+ 
