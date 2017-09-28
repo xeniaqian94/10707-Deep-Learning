@@ -32,6 +32,15 @@ EXCEPT
 
 for unit in 20 50 100 200 300 400 500; do nohup condor_run "python train.py -lr 0.01 -momentum 0.2 -max_epoch 125 -hidden_layer_1_dimension $unit -hidden_layer_2_dimension $unit"  & done
 
+6h)
+
+The simplest invocation is python train.py -minibatch_size 32
+
+for activation in "sigmoid" "tanh" "ReLU"; do for iter in 1 2 3; do for size in 1 32 64 128; do nohup condor_run "python train.py -lr 0.01 -activation $activation -minibatch_size $size" & done done done
+
+for lr in 0.01 0.1 0.2 0.5; do for iter in 1 2 3; do nohup condor_run "python train.py -lr $lr -minibatch_size 32 " & done done 
+
+for batch_normalization in "True" "False"; do for iter in 1 2 3; do nohup condor_run "python train.py -lr 0.01 -minibatch_size 32 -batch_normalization $batch_normalization " & done done 
 6i)
 
 for activation in "sigmoid" "tanh" "ReLU"; do for iter in 1 2 3 4 5; do nohup condor_run "python train.py -lr 0.01 -momentum 0.5 -activation $activation" & done done
