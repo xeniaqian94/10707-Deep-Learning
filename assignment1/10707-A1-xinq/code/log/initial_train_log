@@ -1,0 +1,2654 @@
+/usr/bin/python /Users/xin/Desktop/10707-Deep-Learning/assignment1/code/train.py
+[784, 100, 10]
+epoch 0 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 0 end in 1.84491801262
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+12013.429863 0.898
+evaluating valid end in 0.0176661014557
+epoch 1 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 1 end in 1.70882105827
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+9452.75316726 0.887
+evaluating valid end in 0.0140829086304
+epoch 2 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 2 end in 2.06483078003
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+7634.47129823 0.869
+evaluating valid end in 0.0184240341187
+epoch 3 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 3 end in 2.06856584549
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+6446.88689414 0.838
+evaluating valid end in 0.0143740177155
+epoch 4 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 4 end in 2.58636307716
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+5659.12756557 0.814
+evaluating valid end in 0.0141398906708
+epoch 5 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 5 end in 1.82124090195
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+5158.38305547 0.767
+evaluating valid end in 0.0154550075531
+epoch 6 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 6 end in 1.72913098335
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+4806.46609969 0.737
+evaluating valid end in 0.0134611129761
+epoch 7 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 7 end in 1.85796189308
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+4507.64241287 0.717
+evaluating valid end in 0.0136830806732
+epoch 8 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 8 end in 1.80023503304
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+4253.97596374 0.698
+evaluating valid end in 0.013622045517
+epoch 9 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 9 end in 1.85544991493
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+4056.89208997 0.678
+evaluating valid end in 0.0135390758514
+epoch 10 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 10 end in 1.73330903053
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+3889.54263065 0.664
+evaluating valid end in 0.0148658752441
+epoch 11 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 11 end in 1.76529884338
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+3740.0326399 0.649
+evaluating valid end in 0.0148549079895
+epoch 12 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 12 end in 1.74148893356
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+3603.16827316 0.638
+evaluating valid end in 0.0147559642792
+epoch 13 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 13 end in 1.71444392204
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+3475.10701578 0.628
+evaluating valid end in 0.0136258602142
+epoch 14 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 14 end in 1.73020386696
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+3353.01544574 0.612
+evaluating valid end in 0.0149049758911
+epoch 15 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 15 end in 1.7372879982
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+3235.62447322 0.595
+evaluating valid end in 0.0148959159851
+epoch 16 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 16 end in 1.74551486969
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+3122.41403417 0.586
+evaluating valid end in 0.0156419277191
+epoch 17 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 17 end in 1.72068190575
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+3013.27561251 0.579
+evaluating valid end in 0.0135650634766
+epoch 18 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 18 end in 1.74564003944
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+2908.49755942 0.569
+evaluating valid end in 0.0135221481323
+epoch 19 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 19 end in 1.72713708878
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+2808.31827796 0.558
+evaluating valid end in 0.0148289203644
+epoch 20 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 20 end in 1.75262093544
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+2712.70466771 0.544
+evaluating valid end in 0.0133872032166
+epoch 21 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 21 end in 1.72912597656
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+2621.45624519 0.538
+evaluating valid end in 0.0133910179138
+epoch 22 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 22 end in 1.72683095932
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+2534.35303808 0.528
+evaluating valid end in 0.0167510509491
+epoch 23 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 23 end in 1.7261068821
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+2451.17249939 0.522
+evaluating valid end in 0.0137751102448
+epoch 24 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 24 end in 1.75327897072
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+2371.59066088 0.518
+evaluating valid end in 0.013610124588
+epoch 25 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 25 end in 1.75952291489
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+2295.2860184 0.511
+evaluating valid end in 0.0168590545654
+epoch 26 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 26 end in 1.81837701797
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+2221.98921327 0.505
+evaluating valid end in 0.0156071186066
+epoch 27 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 27 end in 1.77768707275
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+2151.46437806 0.501
+evaluating valid end in 0.0149829387665
+epoch 28 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 28 end in 1.87290620804
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+2083.52490191 0.492
+evaluating valid end in 0.0135478973389
+epoch 29 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 29 end in 1.79574608803
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+2018.05407164 0.483
+evaluating valid end in 0.0135498046875
+epoch 30 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 30 end in 1.75099802017
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+1955.00456431 0.475
+evaluating valid end in 0.0137808322906
+epoch 31 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 31 end in 1.75761079788
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+1894.39127767 0.467
+evaluating valid end in 0.0154240131378
+epoch 32 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 32 end in 1.80280208588
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+1836.28335292 0.456
+evaluating valid end in 0.0154719352722
+epoch 33 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 33 end in 1.79637503624
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+1780.78593497 0.445
+evaluating valid end in 0.0132989883423
+epoch 34 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 34 end in 1.77314686775
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+1727.99928061 0.436
+evaluating valid end in 0.0207109451294
+epoch 35 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 35 end in 1.77618002892
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+1677.96402283 0.428
+evaluating valid end in 0.0171349048615
+epoch 36 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 36 end in 2.12020802498
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+1630.63299069 0.421
+evaluating valid end in 0.0188460350037
+epoch 37 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 37 end in 2.56561779976
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+1585.88831026 0.408
+evaluating valid end in 0.0189039707184
+epoch 38 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 38 end in 2.37506318092
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+1543.57578551 0.397
+evaluating valid end in 0.0172779560089
+epoch 39 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 39 end in 1.82932114601
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+1503.52981618 0.395
+evaluating valid end in 0.0137009620667
+epoch 40 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 40 end in 1.93261384964
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+1465.58751058 0.385
+evaluating valid end in 0.0150570869446
+epoch 41 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 41 end in 2.0533850193
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+1429.59797334 0.384
+evaluating valid end in 0.0141999721527
+epoch 42 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 42 end in 1.85054588318
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+1395.42809634 0.379
+evaluating valid end in 0.0153639316559
+epoch 43 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 43 end in 1.87430500984
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+1362.96412639 0.372
+evaluating valid end in 0.018002986908
+epoch 44 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 44 end in 1.92474102974
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+1332.1096021 0.365
+evaluating valid end in 0.0148479938507
+epoch 45 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 45 end in 1.84979200363
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+1302.78146318 0.361
+evaluating valid end in 0.0126569271088
+epoch 46 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 46 end in 1.97388315201
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+1274.90617811 0.354
+evaluating valid end in 0.0199677944183
+epoch 47 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 47 end in 2.56404495239
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+1248.41700742 0.348
+evaluating valid end in 0.0153920650482
+epoch 48 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 48 end in 2.01652002335
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+1223.2525781 0.339
+evaluating valid end in 0.0160160064697
+epoch 49 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 49 end in 2.31198406219
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+1199.35627019 0.336
+evaluating valid end in 0.0138339996338
+epoch 50 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 50 end in 2.10770702362
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+1176.67573606 0.335
+evaluating valid end in 0.0163440704346
+epoch 51 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 51 end in 1.97727012634
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+1155.16208407 0.33
+evaluating valid end in 0.01384806633
+epoch 52 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 52 end in 2.13565707207
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+1134.76860619 0.328
+evaluating valid end in 0.0197660923004
+epoch 53 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 53 end in 2.16758799553
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+1115.44923154 0.323
+evaluating valid end in 0.0139589309692
+epoch 54 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 54 end in 2.02006292343
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+1097.15707863 0.317
+evaluating valid end in 0.0233058929443
+epoch 55 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 55 end in 1.99983906746
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+1079.84351943 0.308
+evaluating valid end in 0.0135099887848
+epoch 56 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 56 end in 1.84139609337
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+1063.45801948 0.304
+evaluating valid end in 0.017539024353
+epoch 57 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 57 end in 1.85136198997
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+1047.94873494 0.303
+evaluating valid end in 0.0228002071381
+epoch 58 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 58 end in 1.88279294968
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+1033.26359359 0.299
+evaluating valid end in 0.0156860351562
+epoch 59 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 59 end in 1.8401119709
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+1019.35149633 0.299
+evaluating valid end in 0.0163938999176
+epoch 60 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 60 end in 1.83120203018
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+1006.16334157 0.296
+evaluating valid end in 0.0138461589813
+epoch 61 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 61 end in 1.85583090782
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+993.652712164 0.295
+evaluating valid end in 0.0138871669769
+epoch 62 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 62 end in 1.91266703606
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+981.776206173 0.295
+evaluating valid end in 0.0152449607849
+epoch 63 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 63 end in 1.85480308533
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+970.493501218 0.295
+evaluating valid end in 0.0139269828796
+epoch 64 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 64 end in 1.85021305084
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+959.767287873 0.293
+evaluating valid end in 0.0137588977814
+epoch 65 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 65 end in 1.86446714401
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+949.563183867 0.291
+evaluating valid end in 0.0140719413757
+epoch 66 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 66 end in 1.84807705879
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+939.849675511 0.29
+evaluating valid end in 0.0141999721527
+epoch 67 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 67 end in 1.82644796371
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+930.598069227 0.288
+evaluating valid end in 0.0169219970703
+epoch 68 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 68 end in 1.83948302269
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+921.78240424 0.287
+evaluating valid end in 0.0159320831299
+epoch 69 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 69 end in 1.84090018272
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+913.379283195 0.282
+evaluating valid end in 0.0136518478394
+epoch 70 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 70 end in 1.8283469677
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+905.367607614 0.279
+evaluating valid end in 0.0137469768524
+epoch 71 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 71 end in 1.85336303711
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+897.728240262 0.275
+evaluating valid end in 0.0162370204926
+epoch 72 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 72 end in 1.84081196785
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+890.443640075 0.275
+evaluating valid end in 0.0152060985565
+epoch 73 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 73 end in 1.8351252079
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+883.497519827 0.274
+evaluating valid end in 0.0146131515503
+epoch 74 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 74 end in 1.87804698944
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+876.874564648 0.273
+evaluating valid end in 0.0139060020447
+epoch 75 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 75 end in 1.84400892258
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+870.560229392 0.271
+evaluating valid end in 0.015202999115
+epoch 76 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 76 end in 2.151501894
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+864.540613938 0.267
+evaluating valid end in 0.0193219184875
+epoch 77 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 77 end in 2.71288490295
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+858.802402799 0.266
+evaluating valid end in 0.0149140357971
+epoch 78 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 78 end in 2.23658800125
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+853.332849587 0.268
+evaluating valid end in 0.015056848526
+epoch 79 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 79 end in 2.31625294685
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+848.119786309 0.264
+evaluating valid end in 0.0162110328674
+epoch 80 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 80 end in 2.25337100029
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+843.151640187 0.262
+evaluating valid end in 0.0136051177979
+epoch 81 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 81 end in 2.38858699799
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+838.417445245 0.262
+evaluating valid end in 0.0235929489136
+epoch 82 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 82 end in 2.2416138649
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+833.906841096 0.262
+evaluating valid end in 0.011885881424
+epoch 83 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 83 end in 2.34701704979
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+829.6100563 0.261
+evaluating valid end in 0.0154719352722
+epoch 84 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 84 end in 2.3833129406
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+825.517877444 0.26
+evaluating valid end in 0.0149049758911
+epoch 85 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 85 end in 2.07006883621
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+821.621607487 0.259
+evaluating valid end in 0.0137870311737
+epoch 86 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 86 end in 1.81687688828
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+817.913017907 0.258
+evaluating valid end in 0.0135869979858
+epoch 87 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 87 end in 1.81934118271
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+814.384299018 0.255
+evaluating valid end in 0.0140180587769
+epoch 88 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 88 end in 1.74527406693
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+811.02801207 0.255
+evaluating valid end in 0.0119118690491
+epoch 89 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 89 end in 1.72819495201
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+807.837045617 0.253
+evaluating valid end in 0.0119049549103
+epoch 90 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 90 end in 1.77853393555
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+804.804577554 0.251
+evaluating valid end in 0.0169639587402
+epoch 91 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 91 end in 1.84496808052
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+801.92404328 0.25
+evaluating valid end in 0.0137960910797
+epoch 92 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 92 end in 1.83207798004
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+799.189109793 0.249
+evaluating valid end in 0.0164489746094
+epoch 93 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 93 end in 1.84730911255
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+796.593655061 0.247
+evaluating valid end in 0.0138640403748
+epoch 94 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 94 end in 1.86550211906
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+794.131751887 0.247
+evaluating valid end in 0.0150668621063
+epoch 95 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 95 end in 1.87259292603
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+791.797655421 0.246
+evaluating valid end in 0.0139999389648
+epoch 96 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 96 end in 1.8908598423
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+789.585793636 0.246
+evaluating valid end in 0.0233161449432
+epoch 97 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 97 end in 2.3041779995
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+787.490760173 0.246
+evaluating valid end in 0.0198421478271
+epoch 98 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 98 end in 1.6847422123
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+785.507309158 0.244
+evaluating valid end in 0.0135400295258
+epoch 99 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 99 end in 1.94385695457
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+783.630351641 0.246
+evaluating valid end in 0.0139319896698
+epoch 100 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 100 end in 1.99511003494
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+781.854953411 0.245
+evaluating valid end in 0.013365983963
+epoch 101 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 101 end in 2.06023192406
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+780.1763339 0.245
+evaluating valid end in 0.0133039951324
+epoch 102 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 102 end in 2.13015985489
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+778.589865914 0.245
+evaluating valid end in 0.016391992569
+epoch 103 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 103 end in 1.91670203209
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+777.091075911 0.245
+evaluating valid end in 0.0138461589813
+epoch 104 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 104 end in 1.81131601334
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+775.675644526 0.244
+evaluating valid end in 0.0134339332581
+epoch 105 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 105 end in 1.80386710167
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+774.339407104 0.244
+evaluating valid end in 0.0203828811646
+epoch 106 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 106 end in 1.83059501648
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+773.078354022 0.243
+evaluating valid end in 0.0135838985443
+epoch 107 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 107 end in 1.81129908562
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+771.888630649 0.242
+evaluating valid end in 0.0135200023651
+epoch 108 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 108 end in 1.7768061161
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+770.766536826 0.24
+evaluating valid end in 0.0146691799164
+epoch 109 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 109 end in 1.78934907913
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+769.708525848 0.239
+evaluating valid end in 0.0135481357574
+epoch 110 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 110 end in 1.79734492302
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+768.711202914 0.239
+evaluating valid end in 0.0156319141388
+epoch 111 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 111 end in 1.78131890297
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+767.771323082 0.238
+evaluating valid end in 0.0172910690308
+epoch 112 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 112 end in 1.78864908218
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+766.885788756 0.238
+evaluating valid end in 0.0156009197235
+epoch 113 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 113 end in 1.78566479683
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+766.051646771 0.236
+evaluating valid end in 0.0132119655609
+epoch 114 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 114 end in 1.81015300751
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+765.266085105 0.236
+evaluating valid end in 0.0155911445618
+epoch 115 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 115 end in 1.81773209572
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+764.526429285 0.236
+evaluating valid end in 0.0177371501923
+epoch 116 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 116 end in 1.80316615105
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+763.830138522 0.236
+evaluating valid end in 0.0153501033783
+epoch 117 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 117 end in 1.83560085297
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+763.17480163 0.235
+evaluating valid end in 0.0137300491333
+epoch 118 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 118 end in 1.82906413078
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+762.558132753 0.234
+evaluating valid end in 0.0138158798218
+epoch 119 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 119 end in 1.85364079475
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+761.977966958 0.233
+evaluating valid end in 0.0136091709137
+epoch 120 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 120 end in 1.83302998543
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+761.432255706 0.233
+evaluating valid end in 0.0145969390869
+epoch 121 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 121 end in 1.78453207016
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+760.919062257 0.232
+evaluating valid end in 0.014130115509
+epoch 122 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 122 end in 1.81984996796
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+760.436557018 0.231
+evaluating valid end in 0.0168609619141
+epoch 123 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 123 end in 1.79364800453
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+759.983012887 0.232
+evaluating valid end in 0.0135059356689
+epoch 124 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 124 end in 1.79658699036
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+759.556800596 0.232
+evaluating valid end in 0.0135600566864
+epoch 125 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 125 end in 1.82927298546
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+759.156384099 0.232
+evaluating valid end in 0.0166320800781
+epoch 126 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 126 end in 1.80486297607
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+758.780316022 0.232
+evaluating valid end in 0.0135159492493
+epoch 127 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 127 end in 1.92860817909
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+758.427233187 0.232
+evaluating valid end in 0.0137841701508
+epoch 128 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 128 end in 1.98066997528
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+758.095852245 0.232
+evaluating valid end in 0.0200669765472
+epoch 129 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 129 end in 1.8211979866
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+757.784965417 0.232
+evaluating valid end in 0.0148100852966
+epoch 130 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 130 end in 1.81031298637
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+757.493436374 0.232
+evaluating valid end in 0.0150501728058
+epoch 131 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 131 end in 2.17047405243
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+757.220196253 0.232
+evaluating valid end in 0.024355173111
+epoch 132 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 132 end in 1.94021701813
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+756.96423982 0.23
+evaluating valid end in 0.0136229991913
+epoch 133 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 133 end in 1.80838918686
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+756.724621792 0.23
+evaluating valid end in 0.0139219760895
+epoch 134 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 134 end in 1.82991909981
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+756.500453323 0.23
+evaluating valid end in 0.0141699314117
+epoch 135 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 135 end in 1.85579395294
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+756.290898641 0.23
+evaluating valid end in 0.0148119926453
+epoch 136 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 136 end in 1.82497310638
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+756.095171858 0.229
+evaluating valid end in 0.0140480995178
+epoch 137 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 137 end in 1.85800909996
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+755.912533934 0.228
+evaluating valid end in 0.0142059326172
+epoch 138 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 138 end in 1.84348917007
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+755.742289809 0.228
+evaluating valid end in 0.0136728286743
+epoch 139 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 139 end in 1.83893895149
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+755.583785682 0.227
+evaluating valid end in 0.0141010284424
+epoch 140 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 140 end in 1.8173968792
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+755.436406446 0.227
+evaluating valid end in 0.013689994812
+epoch 141 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 141 end in 1.82556414604
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+755.299573274 0.227
+evaluating valid end in 0.0140089988708
+epoch 142 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 142 end in 1.84006595612
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+755.172741343 0.226
+evaluating valid end in 0.0139620304108
+epoch 143 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 143 end in 1.96234989166
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+755.055397692 0.226
+evaluating valid end in 0.0139770507812
+epoch 144 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 144 end in 2.23742890358
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+754.947059219 0.226
+evaluating valid end in 0.0141050815582
+epoch 145 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 145 end in 2.02821993828
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+754.847270793 0.226
+evaluating valid end in 0.0330398082733
+epoch 146 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 146 end in 2.41950511932
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+754.75560349 0.227
+evaluating valid end in 0.0194070339203
+epoch 147 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 147 end in 1.56160211563
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+754.67165294 0.227
+evaluating valid end in 0.0156071186066
+epoch 148 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 148 end in 1.45974206924
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+754.595037776 0.226
+evaluating valid end in 0.0172820091248
+epoch 149 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 149 end in 1.50262403488
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+754.525398192 0.226
+evaluating valid end in 0.0150978565216
+epoch 150 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 150 end in 1.4815568924
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+754.462394583 0.226
+evaluating valid end in 0.0156400203705
+epoch 151 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 151 end in 1.45332312584
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+754.405706284 0.225
+evaluating valid end in 0.0151569843292
+epoch 152 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 152 end in 1.51927781105
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+754.355030388 0.226
+evaluating valid end in 0.0149359703064
+epoch 153 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 153 end in 1.54591917992
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+754.310080636 0.225
+evaluating valid end in 0.0148849487305
+epoch 154 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 154 end in 1.46137285233
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+754.270586395 0.225
+evaluating valid end in 0.0178079605103
+epoch 155 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 155 end in 1.46112012863
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+754.236291685 0.225
+evaluating valid end in 0.0152060985565
+epoch 156 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 156 end in 1.47064614296
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+754.206954285 0.225
+evaluating valid end in 0.0149509906769
+epoch 157 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 157 end in 1.60439586639
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+754.182344894 0.225
+evaluating valid end in 0.0352489948273
+epoch 158 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 158 end in 1.74875998497
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+754.162246343 0.225
+evaluating valid end in 0.0181798934937
+epoch 159 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 159 end in 2.26236510277
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+754.146452862 0.225
+evaluating valid end in 0.0237259864807
+epoch 160 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 160 end in 1.85408496857
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+754.134769402 0.225
+evaluating valid end in 0.0181221961975
+epoch 161 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 161 end in 2.28691005707
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+754.127010986 0.225
+evaluating valid end in 0.0174918174744
+epoch 162 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 162 end in 1.8934340477
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+754.12300212 0.225
+evaluating valid end in 0.0152409076691
+epoch 163 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 163 end in 2.02535486221
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+754.122576232 0.224
+evaluating valid end in 0.0192019939423
+epoch 164 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 164 end in 1.85723781586
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+754.125575146 0.224
+evaluating valid end in 0.0141761302948
+epoch 165 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 165 end in 1.84061598778
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+754.131848601 0.224
+evaluating valid end in 0.0163071155548
+epoch 166 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 166 end in 1.83312702179
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+754.14125379 0.224
+evaluating valid end in 0.0158159732819
+epoch 167 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 167 end in 1.90288996696
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+754.153654932 0.223
+evaluating valid end in 0.0178470611572
+epoch 168 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 168 end in 2.05125117302
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+754.168922876 0.223
+evaluating valid end in 0.0143008232117
+epoch 169 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 169 end in 2.01686692238
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+754.186934724 0.223
+evaluating valid end in 0.0154559612274
+epoch 170 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 170 end in 2.4462788105
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+754.207573482 0.223
+evaluating valid end in 0.0251100063324
+epoch 171 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 171 end in 2.28344011307
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+754.230727728 0.223
+evaluating valid end in 0.0162758827209
+epoch 172 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 172 end in 2.10055184364
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+754.256291309 0.223
+evaluating valid end in 0.0139470100403
+epoch 173 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 173 end in 2.03031396866
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+754.28416305 0.223
+evaluating valid end in 0.017637014389
+epoch 174 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 174 end in 1.91736984253
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+754.314246482 0.223
+evaluating valid end in 0.0169801712036
+epoch 175 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 175 end in 1.90514397621
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+754.346449588 0.223
+evaluating valid end in 0.0143320560455
+epoch 176 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 176 end in 1.97058796883
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+754.380684568 0.223
+evaluating valid end in 0.0140969753265
+epoch 177 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 177 end in 2.13625407219
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+754.41686761 0.223
+evaluating valid end in 0.0145189762115
+epoch 178 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 178 end in 2.2216770649
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+754.454918683 0.223
+evaluating valid end in 0.0157449245453
+epoch 179 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 179 end in 1.91831493378
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+754.494761335 0.223
+evaluating valid end in 0.0167968273163
+epoch 180 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 180 end in 1.93864107132
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+754.536322512 0.223
+evaluating valid end in 0.0159959793091
+epoch 181 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 181 end in 1.90114808083
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+754.579532379 0.223
+evaluating valid end in 0.0162959098816
+epoch 182 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 182 end in 2.05179405212
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+754.624324157 0.223
+evaluating valid end in 0.0143110752106
+epoch 183 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 183 end in 2.12543320656
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+754.670633967 0.222
+evaluating valid end in 0.0169630050659
+epoch 184 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 184 end in 1.83118796349
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+754.718400684 0.221
+evaluating valid end in 0.0154309272766
+epoch 185 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 185 end in 1.87041187286
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+754.767565797 0.221
+evaluating valid end in 0.0143759250641
+epoch 186 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 186 end in 1.92838907242
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+754.818073285 0.221
+evaluating valid end in 0.01451587677
+epoch 187 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 187 end in 1.85918688774
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+754.869869487 0.221
+evaluating valid end in 0.0153338909149
+epoch 188 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 188 end in 1.83264994621
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+754.922902993 0.221
+evaluating valid end in 0.0139999389648
+epoch 189 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 189 end in 1.84627795219
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+754.977124529 0.221
+evaluating valid end in 0.013808965683
+epoch 190 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 190 end in 1.84037280083
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+755.032486858 0.221
+evaluating valid end in 0.0139241218567
+epoch 191 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 191 end in 1.83997297287
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+755.088944682 0.221
+evaluating valid end in 0.0137541294098
+epoch 192 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 192 end in 1.82843995094
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+755.146454549 0.221
+evaluating valid end in 0.0136680603027
+epoch 193 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 193 end in 2.18151402473
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+755.204974763 0.221
+evaluating valid end in 0.0150480270386
+epoch 194 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 194 end in 2.14934396744
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+755.26446531 0.221
+evaluating valid end in 0.0171120166779
+epoch 195 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 195 end in 1.93711185455
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+755.32488777 0.222
+evaluating valid end in 0.0148100852966
+epoch 196 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 196 end in 2.10153508186
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+755.386205252 0.222
+evaluating valid end in 0.0191268920898
+epoch 197 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 197 end in 2.13761281967
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+755.448382317 0.222
+evaluating valid end in 0.0151448249817
+epoch 198 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 198 end in 2.26467084885
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+755.511384917 0.222
+evaluating valid end in 0.0167360305786
+epoch 199 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 199 end in 2.24662995338
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+755.575180328 0.222
+evaluating valid end in 0.0219550132751
+epoch 200 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 200 end in 2.05618906021
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+755.639737096 0.222
+evaluating valid end in 0.0160911083221
+epoch 201 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 201 end in 2.15888094902
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+755.705024974 0.222
+evaluating valid end in 0.0155830383301
+epoch 202 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 202 end in 2.03068900108
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+755.771014874 0.222
+evaluating valid end in 0.0153520107269
+epoch 203 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 203 end in 2.09052991867
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+755.837678813 0.221
+evaluating valid end in 0.0208439826965
+epoch 204 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 204 end in 2.15794110298
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+755.904989864 0.221
+evaluating valid end in 0.0197570323944
+epoch 205 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 205 end in 2.09386610985
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+755.972922115 0.22
+evaluating valid end in 0.013799905777
+epoch 206 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 206 end in 2.140417099
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+756.041450619 0.22
+evaluating valid end in 0.0175271034241
+epoch 207 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 207 end in 2.13249087334
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+756.110551357 0.22
+evaluating valid end in 0.0135650634766
+epoch 208 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 208 end in 2.03605103493
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+756.180201199 0.22
+evaluating valid end in 0.0235471725464
+epoch 209 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 209 end in 1.95296812057
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+756.250377861 0.22
+evaluating valid end in 0.0169348716736
+epoch 210 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 210 end in 2.10660505295
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+756.321059877 0.22
+evaluating valid end in 0.0139060020447
+epoch 211 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 211 end in 2.1743118763
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+756.392226559 0.22
+evaluating valid end in 0.0204989910126
+epoch 212 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 212 end in 2.12244701385
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+756.463857968 0.22
+evaluating valid end in 0.0156199932098
+epoch 213 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 213 end in 1.95024800301
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+756.535934881 0.22
+evaluating valid end in 0.0120148658752
+epoch 214 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 214 end in 2.3193860054
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+756.608438763 0.22
+evaluating valid end in 0.0208830833435
+epoch 215 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 215 end in 2.07761907578
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+756.68135174 0.221
+evaluating valid end in 0.0148210525513
+epoch 216 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 216 end in 2.22147393227
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+756.75465657 0.22
+evaluating valid end in 0.0143580436707
+epoch 217 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 217 end in 2.12161588669
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+756.828336619 0.22
+evaluating valid end in 0.0155770778656
+epoch 218 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 218 end in 2.2697467804
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+756.902375837 0.22
+evaluating valid end in 0.0200250148773
+epoch 219 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 219 end in 2.18501496315
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+756.976758733 0.22
+evaluating valid end in 0.0157039165497
+epoch 220 start 
+sgd instance id 0
+sgd instance id 1000
+sgd instance id 2000
+epoch 220 end in 2.16337609291
+evaluating valid 
+(100, 1000)
+(100, 1000)
+(10, 1000)
+(10, 1000)
+757.051470356 0.22
+evaluating

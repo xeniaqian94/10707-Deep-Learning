@@ -1,0 +1,9 @@
+universe = vanilla
+executable = .condor_run.70644
+initialdir = /bos/usr0/xinq/10707-Deep-Learning/assignment1/code
+notification = NEVER
+log = .condor_log.70644
+output = .condor_out.70644
+error = .condor_error.70644
+getenv = True
+queue

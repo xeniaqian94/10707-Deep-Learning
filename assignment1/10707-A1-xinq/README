@@ -1,0 +1,24 @@
+The current directory assignment1/ is the root directory, where you will find
+	code/
+	data/
+	dump/
+	plot/
+
+To run a backpropagation with cross-entropy error function for 1-layer neural network with SGD implementation, 
+	cd code; python train.py # here parameters are not tuned to its best setting. 
+
+Our better models are achieved out of 6i) especially batch normalization with tanh? 
+
+To run a backpropagation with cross-entropy error function for 2-layer network with SGD implementation,
+	cd code; python train.py -hidden_layer_2_dimension 100
+
+To run a good minibatch of 32 with batch normalization, 
+	cd code; python train.py -minibatch_size 32 -batch_normalization True -activation tanh -lr 0.1
+
+For more commands on 6 a) - i) questions,:
+	vi code/README
+
+Please kindly send any of your question to Xin Qian @ xinq@andrew.cmu.edu. Thanks ;D:
+
+
+ 
