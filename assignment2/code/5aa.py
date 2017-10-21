@@ -35,26 +35,38 @@ f.subplots_adjust()
 f.savefig("../plot/" + candidate_model_filename.split("/")[-1] + ".png")
 
 plt.cla()
+plt.clf()
 
 fig = plt.figure()
+f = None
 #
-for (metric, metric_full_name) in [('ce', "Average Cross Entropy ")]:
-    this_metric_fold = dict()
-    for (color, fold) in [("b", 'train'), ("g", 'valid')]:
-        candidate_file = \
-        [filename for filename in files if fold in filename and metric in filename and sys.argv[2] in filename][0]
-        this_list = np.asarray(pickle.load(open(dir_file_path + candidate_file, "r")))
-        plt.plot(np.arange(len(this_list)), this_list, color, label=fold + " ")
+for (metric, metric_full_name) in [('ce', "Average Cross Entropy "), ('re', "Reconstruction Error ")]:
+    # try:
 
-    plt.title(metric_full_name + "vs. Epoch")
-    plt.xlabel("# of Epoches")
-    plt.ylabel(metric_full_name)
+        f, ax = plt.subplots()
+        this_metric_fold = dict()
+        for (color, fold) in [("b", 'train'), ("g", 'valid')]:
+            candidate_file = \
+                [filename for filename in files if fold in filename and metric in filename and sys.argv[2] in filename][
+                    0]
+            this_list = np.asarray(pickle.load(open(dir_file_path + candidate_file, "r")))
+            ax.plot(np.arange(len(this_list)), this_list, color, label=fold + " ")
 
-    plt.grid()
-    plt.legend()
-    plt.show()
-    fig.savefig("../plot/" + candidate_model_filename.split("/")[-1].strip("_")+"_" + metric + ".png")
-    plt.cla()
+        ax.set_title(metric_full_name + "vs. Epoch")
+        ax.set_xlabel("# of Epoches")
+        ax.set_ylabel(metric_full_name)
+
+        ax.grid()
+        ax.legend()
+        plt.show()
+        f.subplots_adjust()
+        f.savefig("../plot/" + candidate_model_filename.split("/")[-1].strip("_") + "_" + metric + ".png")
+
+        plt.cla()
+        plt.clf()
+
+    # except:
+    #     pass
 
 
 

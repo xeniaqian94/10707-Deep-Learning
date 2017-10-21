@@ -80,7 +80,7 @@ class Model:
         self.W = None
         self.hbias = None
         self.vbias = None
-        self.lr=lr
+        self.lr = lr
 
         self.n_visible = n_visible
         self.n_hidden = n_hidden
@@ -90,9 +90,9 @@ class Model:
         self.vbias = np.zeros(n_visible)
 
     def pre_activation_h_given_v(self, v):
-        if len(v.shape)==1:
+        if len(v.shape) == 1:
             return np.dot(self.W, v) + self.hbias
-        return np.dot(self.W,v.T).T+np.tile(self.hbias,[v.shape[0],1])
+        return np.dot(self.W, v.T).T + np.tile(self.hbias, [v.shape[0], 1])
 
     def prob_h_given_v(self, v):
         return sigmoid(self.pre_activation_h_given_v(v))
@@ -104,7 +104,7 @@ class Model:
     def pre_activation_v_given_h(self, h):
         if len(h.shape) == 1:
             return np.dot(self.W.T, h) + self.vbias
-        return np.dot(h,self.W)+np.tile(self.vbias,[h.shape[0],1])
+        return np.dot(h, self.W) + np.tile(self.vbias, [h.shape[0], 1])
 
     def prob_v_given_h(self, h):
         return sigmoid(self.pre_activation_v_given_h(h))
@@ -132,23 +132,22 @@ class Model:
         # raw_input(prob_v.shape)
         return prob_v
 
-
     def update(self, x):
         h0, v0, h_tilda, v_tilda = self.gibbs_negative_sampling(x)
-
 
         # save old parameters if necessary
         self.W += self.lr * (np.outer(h0, v0.T) - np.outer(h_tilda, v_tilda.T))
         self.hbias += self.lr * (h0 - h_tilda)
         self.vbias += self.lr * (v0 - v_tilda)
 
-
     def eval(self, X):
 
-        X_tilda=self.reconstruction(X)
-        cross_entropy=-1.0/X_tilda.shape[0]*np.sum(X*np.log(X_tilda)+(1-X)*np.log(1-X_tilda))
+        X_tilda = self.reconstruction(X)
+        cross_entropy = -1.0 / X_tilda.shape[0] * np.sum(X * np.log(X_tilda) + (1 - X) * np.log(1 - X_tilda))
+        reconstruction_error = 1.0 / X_tilda.shape[0] * np.sum(
+            np.sqrt(np.sum(np.multiply(X - X_tilda, X - X_tilda), axis=1)))
 
-        return cross_entropy
+        return cross_entropy, reconstruction_error
 
 
 if __name__ == "__main__":
@@ -159,6 +158,8 @@ if __name__ == "__main__":
         pickle.dump(plot_epoch_ce_train, open("../dump/train" + leading_label + "_ce_" + label, "w"))
         pickle.dump(plot_epoch_ce_valid, open("../dump/valid" + leading_label + "_ce_" + label, "w"))
         # pickle.dump(plot_epoch_ce_test, open("../dump/test" + leading_label + "_ce_" + label, "w"))
+        pickle.dump(plot_epoch_re_train, open("../dump/train" + leading_label + "_re_" + label, "w"))
+        pickle.dump(plot_epoch_re_valid, open("../dump/valid" + leading_label + "_re_" + label, "w"))
 
         # pickle.dump(plot_epoch_cr_train, open("../dump/train" + leading_label + "_cr_" + label, "w"))
         # pickle.dump(plot_epoch_cr_valid, open("../dump/valid" + leading_label + "_cr_" + label, "w"))
@@ -170,8 +171,6 @@ if __name__ == "__main__":
 
     np.seterr(all='raise')
 
-
-
     parser = argparse.ArgumentParser(description='data, parameters, etc.')
     parser.add_argument('-train', type=str, help='training file path', default='../data/digitstrain.txt')
     parser.add_argument('-valid', type=str, help='validation file path', default='../data/digitsvalid.txt')
@@ -179,7 +178,7 @@ if __name__ == "__main__":
     parser.add_argument('-max_epoch', type=int, help="maximum epoch", default=250)
 
     parser.add_argument('-n_hidden', type=int, help="num of hidden units", default=100)
-    parser.add_argument('-k', type=int, help="CD-k sampling",default=1)
+    parser.add_argument('-k', type=int, help="CD-k sampling", default=1)
     parser.add_argument('-lr', type=float, help="learning rate", default=0.01)
     parser.add_argument('-minibatch_size', type=int, help="minibatch_size", default=1)
 
@@ -206,7 +205,8 @@ if __name__ == "__main__":
 
     plot_epoch_ce_train = []
     plot_epoch_ce_valid = []
-    plot_epoch_ce_test = []
+    plot_epoch_re_train = []
+    plot_epoch_re_valid = []
 
     model = Model(n_visible, args.n_hidden, args.k, args.lr, args.minibatch_size)
 
@@ -230,23 +230,25 @@ if __name__ == "__main__":
                                            train_Y[instance_id:min(instance_id + args.minibatch_size, len(train_Y))])
 
             print "evaluating valid current learning rate " + str(model.lr)
-            cross_entropy = model.eval(valid_X)
+            cross_entropy, reconstruction_error = model.eval(valid_X)
 
             # then = time.time()
             # cross_entropy, classification_error = model.eval_valid(valid_X, valid_Y, args.activation,
             #                                                        args.minibatch_size)
             # if old_classification_error < cross_entropy or old_classification_error < classification_error:
             plot_epoch_ce_valid += [cross_entropy]
+            plot_epoch_re_valid += [reconstruction_error]
             # plot_epoch_cr_valid += [classification_error]
-            print "cross_entropy valid " + str(cross_entropy)
+            print "cross_entropy valid reconstruction error " + str(cross_entropy)+" "+str(reconstruction_error)
             # + " " + str(classification_error)
 
-            cross_entropy = model.eval(train_X)
+            cross_entropy, reconstruction_error = model.eval(train_X)
             # , args.activation,
             #                                                    args.minibatch_size)
             plot_epoch_ce_train += [cross_entropy]
+            plot_epoch_re_train += [reconstruction_error]
             # plot_epoch_cr_train += [classification_error]
-            print "cross_entropy train " + str(cross_entropy)
+            print "cross_entropy train reconstruction error " + str(cross_entropy)+" "+str(reconstruction_error)
             # + " " + str(classification_error)
 
             print
