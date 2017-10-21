@@ -158,7 +158,7 @@ if __name__ == "__main__":
 
         pickle.dump(plot_epoch_ce_train, open("../dump/train" + leading_label + "_ce_" + label, "w"))
         pickle.dump(plot_epoch_ce_valid, open("../dump/valid" + leading_label + "_ce_" + label, "w"))
-        pickle.dump(plot_epoch_ce_test, open("../dump/test" + leading_label + "_ce_" + label, "w"))
+        # pickle.dump(plot_epoch_ce_test, open("../dump/test" + leading_label + "_ce_" + label, "w"))
 
         # pickle.dump(plot_epoch_cr_train, open("../dump/train" + leading_label + "_cr_" + label, "w"))
         # pickle.dump(plot_epoch_cr_valid, open("../dump/valid" + leading_label + "_cr_" + label, "w"))
@@ -207,10 +207,6 @@ if __name__ == "__main__":
     plot_epoch_ce_train = []
     plot_epoch_ce_valid = []
     plot_epoch_ce_test = []
-
-    plot_epoch_cr_train = []
-    plot_epoch_cr_valid = []
-    plot_epoch_cr_test = []
 
     model = Model(n_visible, args.n_hidden, args.k, args.lr, args.minibatch_size)
 

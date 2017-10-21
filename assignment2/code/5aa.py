@@ -12,41 +12,58 @@ from train import Model
 dir_file_path = sys.argv[1]  # ../dump/plot_epoch_
 files = os.listdir(dir_file_path)
 
-candidate_model_filename=[file for file in files if sys.argv[2] in file and "model" in file][0]
+candidate_model_filename = [file for file in files if sys.argv[2] in file and "model" in file][0]
 
-model=pickle.load(open(dir_file_path+candidate_model_filename,"r"))
+model = pickle.load(open(dir_file_path + candidate_model_filename, "r"))
 
-print "model W shape "+str((model.W.shape))
+print "model W shape " + str((model.W.shape))
 
-fig=plt.figure()
-
+fig = plt.figure()
 
 f, axarr = plt.subplots(int(np.sqrt(model.W.shape[0])), int(np.sqrt(model.W.shape[0])))
 plt.gray()
 
 for i in np.arange(int(model.W.shape[0])):
-    row=i/10
-    col=i%10
-    this_array=np.asarray(model.W[i]).reshape(np.sqrt(model.W.shape[1]),np.sqrt(model.W.shape[1]))
-    axarr[row,col].imshow(this_array)
+    row = i / 10
+    col = i % 10
+    this_array = np.asarray(model.W[i]).reshape(np.sqrt(model.W.shape[1]), np.sqrt(model.W.shape[1]))
+    axarr[row, col].imshow(this_array)
     axarr[row, col].axis('off')
-
 
 f.subplots_adjust()
 # plt.show()
-f.savefig("../plot/"+candidate_model_filename.split("/")[-1]+".png")
+f.savefig("../plot/" + candidate_model_filename.split("/")[-1] + ".png")
 
 plt.cla()
 
-
-
-
-
-# fig = plt.figure()
+fig = plt.figure()
 #
-# for (metric, metric_full_name) in [('ce', "Average Cross Entropy "), ('cr', "Classification Error (in percentage) ")]:
-#     this_metric_fold = dict()
-#     for (color, fold) in [("r", 'train'), ("g", 'valid'), ("b", 'test')]:
+for (metric, metric_full_name) in [('ce', "Average Cross Entropy ")]:
+    this_metric_fold = dict()
+    for (color, fold) in [("b", 'train'), ("g", 'valid')]:
+        candidate_file = \
+        [filename for filename in files if fold in filename and metric in filename and sys.argv[2] in filename][0]
+        this_list = np.asarray(pickle.load(open(dir_file_path + candidate_file, "r")))
+        plt.plot(np.arange(len(this_list)), this_list, color, label=fold + " ")
+
+    plt.title(metric_full_name + "vs. Epoch")
+    plt.xlabel("# of Epoches")
+    plt.ylabel(metric_full_name)
+
+    plt.grid()
+    plt.legend()
+    plt.show()
+    fig.savefig("../plot/" + candidate_model_filename.split("/")[-1].strip("_")+"_" + metric + ".png")
+    plt.cla()
+
+
+
+
+
+
+
+
+
 #
 #         # question 6d
 #         # for (lr,line_style) in [(0.1,"-."),(0.01,":"),(0.2,"--"),(0.5,"-")]:
