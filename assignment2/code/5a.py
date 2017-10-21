@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 import pickle
 import re
 
-# python 6ab_load_ce_cr_avg_by_num_samply.py ../dump/
+# python 5a.py ../dump/
 #
 # plot_epoch_ 1506389922 1506389365 1506388842 1506388334 1506387806
 
