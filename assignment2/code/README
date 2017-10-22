@@ -6,6 +6,7 @@ for lr in 0.1 0.01; do for epoch in 250 300 350 400 500 600 750 1000; do nohup c
 
 for k in 5 10 20; do nohup condor_run "python train.py -k $k -max_epoch 1000 " & done
 
+5c) python 5c.py ../dump/ [learned model name] 
 
 
 
