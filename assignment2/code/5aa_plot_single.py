@@ -7,12 +7,12 @@ import os
 import re
 from train import Model
 
-# python 5aa.py ../dump/ 1508612534
+# python 5aa_plot_single.py ../dump/ 1508612534
 
 dir_file_path = sys.argv[1]  # ../dump/plot_epoch_
 files = os.listdir(dir_file_path)
 
-candidate_model_filename = [file for file in files if sys.argv[2] in file and "model" in file][0]
+candidate_model_filename = [file for file in files if all([tag in file for tag in sys.argv[2].split("_")]) and "model" in file][0]
 
 model = pickle.load(open(dir_file_path + candidate_model_filename, "r"))
 
@@ -40,15 +40,16 @@ plt.clf()
 fig = plt.figure()
 f = None
 #
-for (metric, metric_full_name) in [('ce', "Average Cross Entropy "), ('re', "Reconstruction Error ")]:
+for (metric, metric_full_name) in [('ce', "Average Cross Entropy ")]:
+    # , ('re', "Reconstruction Error ")]:
+
     # try:
 
         f, ax = plt.subplots()
         this_metric_fold = dict()
         for (color, fold) in [("b", 'train'), ("g", 'valid')]:
             candidate_file = \
-                [filename for filename in files if fold in filename and metric in filename and sys.argv[2] in filename][
-                    0]
+                [filename for filename in files if fold in filename and metric in filename and sys.argv[2] in filename][0]
             this_list = np.asarray(pickle.load(open(dir_file_path + candidate_file, "r")))
             ax.plot(np.arange(len(this_list)), this_list, color, label=fold + " ")
 
@@ -58,12 +59,15 @@ for (metric, metric_full_name) in [('ce', "Average Cross Entropy "), ('re', "Rec
 
         ax.grid()
         ax.legend()
-        plt.show()
+        # plt.show()
         f.subplots_adjust()
         f.savefig("../plot/" + candidate_model_filename.split("/")[-1].strip("_") + "_" + metric + ".png")
 
         plt.cla()
         plt.clf()
+
+
+
 
     # except:
     #     pass

@@ -85,7 +85,7 @@ class Model:
         self.n_visible = n_visible
         self.n_hidden = n_hidden
 
-        self.W = np.random.normal(0, 1, (n_hidden, n_visible))
+        self.W = np.random.normal(0, 0.08, (n_hidden, n_visible))
         self.hbias = np.zeros(n_hidden)
         self.vbias = np.zeros(n_visible)
 
@@ -99,7 +99,7 @@ class Model:
 
     def sample_h_given_v(self, v):
         prob_h = self.prob_h_given_v(v)
-        return np.random.binomial(1, prob_h, prob_h.shape[0])
+        return np.random.binomial(1, prob_h, prob_h.shape[0]), prob_h
 
     def pre_activation_v_given_h(self, h):
         if len(h.shape) == 1:
@@ -111,17 +111,22 @@ class Model:
 
     def sample_v_given_h(self, h):
         prob_v = self.prob_v_given_h(h)
-        return np.random.binomial(1, prob_v, prob_v.shape[0])
+        return np.random.binomial(1, prob_v, prob_v.shape[0]), prob_v
 
-    def gibbs_negative_sampling(self, v):
+    def gibbs_negative_sampling(self, v, k=0):
         v_sample = v  # v0
-        h_sample = self.sample_h_given_v(v_sample)  # h0
+        h_sample,prob_h = self.sample_h_given_v(v_sample)  # h0
         h0 = h_sample
         v0 = v_sample
-        for i in range(1, self.k + 1):
-            v_sample = self.sample_v_given_h(h_sample)
-            h_sample = self.sample_h_given_v(v_sample)
-        return [h0, v0, h_sample, v_sample]
+        if k == 0:
+            this_k = self.k
+        else:
+            this_k = k
+
+        for i in range(1, this_k + 1):
+            v_sample, prob_v = self.sample_v_given_h(h_sample)
+            h_sample, prob_h = self.sample_h_given_v(v_sample)
+        return [h0, v0, h_sample, v_sample, prob_h, prob_v]
 
     def reconstruction(self, v):
         # raw_input(v.shape)
@@ -133,7 +138,15 @@ class Model:
         return prob_v
 
     def update(self, x):
-        h0, v0, h_tilda, v_tilda = self.gibbs_negative_sampling(x)
+        h0, v0, h_tilda, v_tilda, h_prob, v_prob = self.gibbs_negative_sampling(x)
+
+        # save old parameters if necessary
+        self.W += self.lr * (np.outer(h0, v0.T) - np.outer(h_tilda, v_tilda.T))
+        self.hbias += self.lr * (h0 - h_tilda)
+        self.vbias += self.lr * (v0 - v_tilda)
+
+    def update_minibatch(self, x):
+        h0, v0, h_tilda, v_tilda, h_prob, v_prob = self.gibbs_negative_sampling(x)
 
         # save old parameters if necessary
         self.W += self.lr * (np.outer(h0, v0.T) - np.outer(h_tilda, v_tilda.T))
@@ -226,8 +239,7 @@ if __name__ == "__main__":
                     model.update(train_X[instance_id])
             else:
                 for instance_id in range(0, train_X.shape[0], args.minibatch_size)[:-1]:
-                    model.update_minibatch(train_X[instance_id:min(instance_id + args.minibatch_size, len(train_X))],
-                                           train_Y[instance_id:min(instance_id + args.minibatch_size, len(train_Y))])
+                    model.update_minibatch(train_X[instance_id:min(instance_id + args.minibatch_size, len(train_X))])
 
             print "evaluating valid current learning rate " + str(model.lr)
             cross_entropy, reconstruction_error = model.eval(valid_X)
@@ -239,7 +251,7 @@ if __name__ == "__main__":
             plot_epoch_ce_valid += [cross_entropy]
             plot_epoch_re_valid += [reconstruction_error]
             # plot_epoch_cr_valid += [classification_error]
-            print "cross_entropy valid reconstruction error " + str(cross_entropy)+" "+str(reconstruction_error)
+            print "cross_entropy valid reconstruction error " + str(cross_entropy) + " " + str(reconstruction_error)
             # + " " + str(classification_error)
 
             cross_entropy, reconstruction_error = model.eval(train_X)
@@ -248,7 +260,7 @@ if __name__ == "__main__":
             plot_epoch_ce_train += [cross_entropy]
             plot_epoch_re_train += [reconstruction_error]
             # plot_epoch_cr_train += [classification_error]
-            print "cross_entropy train reconstruction error " + str(cross_entropy)+" "+str(reconstruction_error)
+            print "cross_entropy train reconstruction error " + str(cross_entropy) + " " + str(reconstruction_error)
             # + " " + str(classification_error)
 
             print
