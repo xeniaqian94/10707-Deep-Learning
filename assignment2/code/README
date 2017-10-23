@@ -9,6 +9,18 @@ for k in 5 10 20; do nohup condor_run "python train.py -k $k -max_epoch 1000 " &
 5c) python 5c.py ../dump/ [learned model name] 
 
 
+5d)
+
+5e) python train_autoencoder2.py -max_epoch 30 
+
+
+5f)
+
+
+5g) for hidden in 50 100 200 500; do nohup condor_run "python train.py -n_hidden $hidden -max_epoch 500" & done
+
+
+
 
 
 
