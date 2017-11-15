@@ -1,0 +1,5 @@
+For code and documentation, please cd code/ 
+There is a separate README with detailed command on running the RBM, autoencoder, denoising autoencoder.
+The dump/ directory was used to save model, log informations, currently it has been emptied but could be recovered to reproduce report results if necessary. 
+For questions, please contact xinq@cs.cmu.edu. Thanks! 
+

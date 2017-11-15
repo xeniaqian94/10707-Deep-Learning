@@ -34,14 +34,10 @@ def derivative_sigmoid(g_a, a):
 
 
 def tanh(x):
-    # print "using tanh " + str(np.divide(np.exp(np.add(x, x)) - 1, np.exp(np.add(x, x)) + 1)[:5])
-    # print np.add(x,x)[:5]
-    # print (np.exp(np.add(x,x)) - 1 / np.exp(np.add(x,x)) + 1)[:5]
     return np.divide(np.exp(np.add(x, x)) - 1, np.exp(np.add(x, x)) + 1)
 
 
 def deact_tanh(g_a, a):
-    # print "using deact tanh " + str(g_a[:5])
     return 1 - np.multiply(g_a, g_a)
 
 
@@ -175,6 +171,7 @@ class Model:
 
         gradient_a = [None] * (self.L_num_layer + 2)
         gradient_W = [None] * (self.L_num_layer + 2)
+        gradient_W[1]=[None](self.ngram-1)
         gradient_b = [None] * (self.L_num_layer + 2)
         gradient_h = [None] * (self.L_num_layer + 1)
 
