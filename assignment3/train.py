@@ -1,31 +1,13 @@
-import re
-
-from nltk.translate.bleu_score import corpus_bleu, sentence_bleu, SmoothingFunction
-import time
-import numpy as np
-from collections import defaultdict, Counter, namedtuple
-from itertools import chain, islice
-import argparse, os, sys
-
-import math
 import sys
-import time
-
-import sys
-import numpy as np
 import argparse
-import copy
 
-from nltk.translate.bleu_score import corpus_bleu
-from collections import Counter, defaultdict
-from collections import defaultdict
+
+
 from itertools import count, izip, chain
-import operator
 import time
 from util import *
 import pickle
 
-from opt_einsum import contract
 
 
 class Vocab:
