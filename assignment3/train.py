@@ -582,6 +582,7 @@ if __name__ == '__main__':
         ce, perp = model.validate(valid_X, valid_Y)
         f_log.write("cross entropy for validation " + str(ce)+"\n")
         f_log.write("perplexity for validation " + str(perp)+"\n")
+        f_log.flush()
 
 
 
