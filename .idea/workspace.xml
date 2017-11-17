@@ -2,19 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="63ef14c8-d68e-4be8-a9a5-73fe6216a88c" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assignment3/train.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assignment3/train_ref.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assignment2/plot/5c_model_1508676232__gaussian.png" afterPath="$PROJECT_DIR$/assignment2/plot/5c_model_1508676232__gaussian.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assignment3/pytorch_train.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assignment3/readme" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assignment1/code/train.py" afterPath="$PROJECT_DIR$/assignment1/code/train.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assignment2/.idea/workspace.xml" afterPath="$PROJECT_DIR$/assignment2/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assignment2/code/5aa_plot_multiple.py" afterPath="$PROJECT_DIR$/assignment2/code/5aa_plot_multiple.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assignment2/code/5aa_plot_single.py" afterPath="$PROJECT_DIR$/assignment2/code/5aa_plot_single.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assignment2/code/5c.py" afterPath="$PROJECT_DIR$/assignment2/code/5c.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assignment2/code/README" afterPath="$PROJECT_DIR$/assignment2/code/README" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assignment2/code/nohup.out" afterPath="$PROJECT_DIR$/assignment2/code/nohup.out" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assignment2/code/train.py" afterPath="$PROJECT_DIR$/assignment2/code/train.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assignment3/train.py" afterPath="$PROJECT_DIR$/assignment3/train.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -41,8 +33,8 @@
       <file leaf-file-name="train.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assignment1/code/train.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="359">
-              <caret line="173" column="42" lean-forward="true" selection-start-line="173" selection-start-column="8" selection-end-line="173" selection-end-column="42" />
+            <state relative-caret-position="-1904">
+              <caret line="463" column="51" lean-forward="false" selection-start-line="463" selection-start-column="8" selection-end-line="463" selection-end-column="51" />
               <folding>
                 <element signature="e#4281#4924#0" expanded="false" />
                 <element signature="e#4983#5483#0" expanded="false" />
@@ -54,10 +46,22 @@
       <file leaf-file-name="train.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assignment3/train.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="355">
-              <caret line="87" column="88" lean-forward="false" selection-start-line="87" selection-start-column="88" selection-end-line="87" selection-end-column="88" />
+            <state relative-caret-position="453">
+              <caret line="601" column="64" lean-forward="false" selection-start-line="601" selection-start-column="64" selection-end-line="601" selection-end-column="64" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pytorch_train.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/assignment3/pytorch_train.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="405">
+              <caret line="78" column="25" lean-forward="false" selection-start-line="78" selection-start-column="20" selection-end-line="78" selection-end-column="25" />
+              <folding>
+                <element signature="e#0#12#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -119,7 +123,6 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>raw_input</find>
-      <find>print</find>
       <find>sigmoid</find>
       <find>random</find>
       <find>batch_normalization</find>
@@ -127,6 +130,9 @@
       <find>init_training</find>
       <find>Vocab</find>
       <find>batch_size</find>
+      <find>print</find>
+      <find>self.ngram - 1):</find>
+      <find>args.miniba</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -152,10 +158,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="199" />
-    <option name="y" value="-899" />
-    <option name="width" value="1838" />
-    <option name="height" value="1154" />
+    <option name="x" value="52" />
+    <option name="y" value="56" />
+    <option name="width" value="1440" />
+    <option name="height" value="823" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -424,10 +430,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="199" y="-899" width="1838" height="1154" extended-state="0" />
+    <frame x="52" y="56" width="1440" height="823" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17464635" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22291666" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -457,18 +463,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/assignment1/code/train.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="310" column="0" lean-forward="true" selection-start-line="310" selection-start-column="0" selection-end-line="310" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#18#0" expanded="false" />
-            <element signature="e#4281#4924#0" expanded="false" />
-            <element signature="e#4983#5483#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assignment1/code/visualize_parameter.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -857,10 +851,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/assignment3/pytorch_train.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="78" column="25" lean-forward="false" selection-start-line="78" selection-start-column="20" selection-end-line="78" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/assignment1/code/train.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="173" column="42" lean-forward="true" selection-start-line="173" selection-start-column="8" selection-end-line="173" selection-end-column="42" />
+        <state relative-caret-position="-1904">
+          <caret line="463" column="51" lean-forward="false" selection-start-line="463" selection-start-column="8" selection-end-line="463" selection-end-column="51" />
           <folding>
             <element signature="e#4281#4924#0" expanded="false" />
             <element signature="e#4983#5483#0" expanded="false" />
@@ -870,8 +874,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assignment3/train.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="87" column="88" lean-forward="false" selection-start-line="87" selection-start-column="88" selection-end-line="87" selection-end-column="88" />
+        <state relative-caret-position="453">
+          <caret line="601" column="64" lean-forward="false" selection-start-line="601" selection-start-column="64" selection-end-line="601" selection-end-column="64" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>

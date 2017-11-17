@@ -171,7 +171,7 @@ class Model:
 
         gradient_a = [None] * (self.L_num_layer + 2)
         gradient_W = [None] * (self.L_num_layer + 2)
-        gradient_W[1]=[None](self.ngram-1)
+        gradient_W[1] = [None](self.ngram - 1)
         gradient_b = [None] * (self.L_num_layer + 2)
         gradient_h = [None] * (self.L_num_layer + 1)
 
@@ -264,9 +264,9 @@ class Model:
 
                 h += [activation(out[-1].T)]  # h_k=g(a_k)
             else:
-                if i==self.L_num_layer+1:
+                if i == self.L_num_layer + 1:
                     break
-                h+=[activation(a[-1].T)]
+                h += [activation(a[-1].T)]
 
         if self.batch_normalization:
             softmax_over_class = softmax(out[-1].T).T
@@ -333,7 +333,7 @@ class Model:
 
             gradient_b[k] = gradient_a[k]
 
-            if k==1:
+            if k == 1:
                 break
 
             gradient_h[k - 1] = np.dot(self.W[k].T, gradient_a[k])
@@ -342,7 +342,7 @@ class Model:
                 # print out[k-1],h[k-1].shape
                 gradient_out[k - 1] = np.multiply(gradient_h[k - 1], deactivation(h[k - 1], out[k - 1].T)).T
             else:
-                gradient_a[k-1]=np.multiply(gradient_h[k - 1], deactivation(h[k - 1], a[k - 1])).T
+                gradient_a[k - 1] = np.multiply(gradient_h[k - 1], deactivation(h[k - 1], a[k - 1])).T
 
         self.prev_W = [[]]
         self.prev_b = [[]]

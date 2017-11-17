@@ -25,6 +25,8 @@ import time
 from util import *
 import pickle
 
+from opt_einsum import contract
+
 
 class Vocab:
     def __init__(self, w2i=None):
@@ -77,18 +79,18 @@ def init_config():
     parser.add_argument('-vocab', type=str, help='path of the serialized vocabulary')
     parser.add_argument('-vocab_size', type=int, default=8000, help='vocab size')
 
-    parser.add_argument('-batch_size', default=32, type=int, help='batch size')
+    # parser.add_argument('-batch_size', default=32, type=int, help='batch size')
     parser.add_argument('-embed_size', default=16, type=int, help='size of word embeddings')
     parser.add_argument('-hidden_size', default=128, type=int, help='hidden layer size')
     parser.add_argument('-num_layer', type=int, help="if 1 single layer, 2 then 2-layer network", default=1)
     parser.add_argument('-ngram', default=4, type=int)
     parser.add_argument('-lr', type=float, help="learning rate", default=0.1)
     parser.add_argument('-lbd', type=float, help="regularization term", default=0.001)
-    parser.add_argument('-momentum', type=float, help="average gradient", default=0.5)
+    # parser.add_argument('-momentum', type=float, help="average gradient", default=0.5)
     parser.add_argument('-minibatch_size', type=int, help="minibatch_size", default=1024)
     parser.add_argument('-batch_normalization', type=bool, help="whether do batch normalization or not ", default=True)
     parser.add_argument('-activation', type=str, help="which activation to use ", default="none")
-    parser.add_argument('-max_epoch', type=int, default=200)
+    parser.add_argument('-max_epoch', type=int, default=100)
 
     args = parser.parse_args()
     np.random.seed(int(time.time()))
@@ -133,6 +135,7 @@ class Model:
         self.dimension_list = [args.embed_size, args.hidden_size, self.num_class]
 
         self.ngram = args.ngram
+        self.minibatch_size = args.minibatch_size
 
         for i in range(1, self.L_num_layer + 2):
 
@@ -320,22 +323,31 @@ class Model:
 
         for k in range(self.L_num_layer + 1, 0, -1):
 
-            print "gradient_a[k].shape " + str(gradient_a[k].shape)
-            if not k == 1:
-                print "h[k - 1].shape " + str(h[k - 1].shape)
+            # print "gradient_a[k].shape " + str(gradient_a[k].shape)
+            # if not k == 1:
+            #     print "h[k - 1].shape " + str(h[k - 1].shape)
+
+
             # raw_input()
 
             if k == 2:
-                gradient_W[k] = np.einsum('ki,jk->kij', gradient_a[k], h[k - 1])
+                # gradient_W[k] = np.einsum('ki,jk->kij', gradient_a[k], h[k - 1],optimize=True)
+                # gradient_W[k] = contract('ki,jk->kij', gradient_a[k], h[k - 1])
+                gradient_W[k] = np.dot(h[k - 1], gradient_a[k]).T
+
             else:
                 for i in range(self.ngram - 1):
-                    gradient_W[k][i] = np.einsum('ki,jk->kij', gradient_a[k],
-                                                 h[k - 1][i])  # g_a num_instance * n_output
-                    print "str(gradient_W[k][i].shape) " + str(k) + " " + str(i) + " " + str(gradient_W[k][i].shape)
+                    # gradient_W[k][i] = np.einsum('ki,jk->kij', gradient_a[k], h[k - 1][i],optimize=True) # g_a num_instance * n_output
+
+                    # gradient_W[k][i] = contract('ki,jk->kij', gradient_a[k],h[k - 1][i])
+
+                    gradient_W[k][i] = np.dot(h[k - 1][i], gradient_a[k]).T
+
+                    # print "str(gradient_W[k][i].shape) " + str(k) + " " + str(i) + " " + str(gradient_W[k][i].shape)
                     gradient_C[i] = np.dot(self.W[k][i].T, gradient_a[k].T)  # emb_size * num_instances
 
-            if not k==1:
-                print "gradient_W[k].shape " + str(gradient_W[k].shape)
+            # if not k == 1:
+            #     print "gradient_W[k].shape " + str(gradient_W[k].shape)
 
             gradient_b[k] = gradient_a[k]
 
@@ -343,24 +355,28 @@ class Model:
                 break
 
             gradient_h[k - 1] = np.dot(self.W[k].T, gradient_a[k].T)  # num_input * num_instances
-            print "gradient_h[k - 1].shape " + str(gradient_h[k - 1].shape)
+            # print "gradient_h[k - 1].shape " + str(gradient_h[k - 1].shape)
 
             if deactivation:
                 gradient_a[k - 1] = np.multiply(gradient_h[k - 1], deactivation(h[k - 1], a[k - 1])).T
             else:
                 gradient_a[k - 1] = gradient_h[k - 1].T
 
-            print "gradient_a[k - 1].shape " + str(gradient_a[k - 1].shape)
+                # print "gradient_a[k - 1].shape " + str(gradient_a[k - 1].shape)
 
         for i in range(1, self.L_num_layer + 2):
             if i == 1:
                 for j in range(self.ngram - 1):
-                    print gradient_W[1][2].shape
-                    delta_W_i = -1.0 * np.mean(gradient_W[i][j], axis=0) - 2.0 * self.lbd * self.W[i][j]
+                    # print gradient_W[1][2].shape
+                    # delta_W_i = -1.0 * np.mean(gradient_W[i][j], axis=0) - 2.0 * self.lbd * self.W[i][j]
+                    delta_W_i = -1.0 * gradient_W[i][j] / self.minibatch_size - 2.0 * self.lbd * self.W[i][j]
+
                     self.W[i][j] = self.W[i][j] + self.lr * delta_W_i
                     self.C[X[:, j]] -= self.lr * gradient_C[j].T / gradient_C[j].shape[1]
             else:
-                delta_W_i = -1.0 * np.mean(gradient_W[i], axis=0) - 2.0 * self.lbd * self.W[i]
+                # delta_W_i = -1.0 * np.mean(gradient_W[i], axis=0) - 2.0 * self.lbd * self.W[i]
+                delta_W_i = -1.0 * gradient_W[i] / self.minibatch_size - 2.0 * self.lbd * self.W[i]
+
                 self.W[i] = self.W[i] + self.lr * delta_W_i
 
             # if len(self.prev_W) == len(self.W) and self.momentum > 0:
@@ -378,14 +394,34 @@ class Model:
 
     def average_cross_entropy_batch(self, softmax_over_class, Y):  # softmax_over_class = # dimension * # instance
 
+        ce_batch = np.sum(-1.0 * np.log(softmax_over_class[np.arange(softmax_over_class.shape[0]), Y]))
 
-        return np.sum(-1.0 * np.log(softmax_over_class[np.arange(softmax_over_class.shape[0]), Y])) / \
-               softmax_over_class.shape[0]
+        return softmax_over_class.shape[0], ce_batch
+
+    def log2P_sum_batch(self, softmax_over_class, Y):
+        sum_batch = np.sum(np.log2(softmax_over_class[np.arange(softmax_over_class.shape[0]), Y]))
+        return softmax_over_class.shape[0], sum_batch
+
+    def validate(self, X, Y):
+        softmax_over_class, a, h = self.forward_minibatch(X)
+
+        n, ce_batch = self.average_cross_entropy_batch(softmax_over_class, Y)
+        # print "\n\ncurrent batch avg_ce_batch " + str(avg_ce_batch) + "\n\n"
+        n, sum_batch = self.log2P_sum_batch(softmax_over_class, Y)
+
+        ce = 1.0 / n * ce_batch
+        perp = 2 ** (-1. / n * sum_batch)
+
+        return ce, perp
 
     def update_minibatch(self, X, Y, activation_str="none"):  # y is the final labely
 
         if activation_str == "none":
             softmax_over_class, a, h = self.forward_minibatch(X)
+
+            n, ce_batch = self.average_cross_entropy_batch(softmax_over_class, Y)
+            # print "\n\ncurrent batch avg_ce_batch " + str(avg_ce_batch) + "\n\n"
+            n, sum_batch = self.log2P_sum_batch(softmax_over_class, Y)
 
             # print "a and h shape"
             # print a[-1].shape
@@ -393,22 +429,30 @@ class Model:
 
             # self.back_prop_minibatch(X, Y, f_X, a, h, out, variable_cache, derivative_sigmoid)
 
-            avg_ce_batch = self.average_cross_entropy_batch(softmax_over_class, Y)
-            print "\n\ncurrent batch avg_ce_batch " + str(avg_ce_batch)+"\n\n"
+
 
             # raw_input("check here ...")
             self.back_prop_minibatch(X, Y, softmax_over_class, a, h)
 
+        elif activation_str == "tanh":
+            softmax_over_class, a, h = self.forward_minibatch(X, tanh)
+            n, ce_batch = self.average_cross_entropy_batch(softmax_over_class, Y)
+            # print "\n\ncurrent batch avg_ce_batch " + str(avg_ce_batch) + "\n\n"
+            n, sum_batch = self.log2P_sum_batch(softmax_over_class, Y)
+            self.back_prop_minibatch(X, Y, softmax_over_class, a, h, deact_tanh)
 
-            # elif activation_str == "sigmoid":
-            #     f_X, a, h, out, variable_cache = self.forward_minibatch(X, sigmoid)
-            #     self.back_prop_minibatch(X, Y, f_X, a, h, out, variable_cache, derivative_sigmoid)
-            # elif activation_str == "tanh":
-            #     f_X, a, h, out, variable_cache = self.forward_minibatch(X, tanh)
-            #     self.back_prop_minibatch(X, Y, f_X, a, h, out, variable_cache, deact_tanh)
-            # elif activation_str == "ReLU":
-            #     f_X, a, h, out, variable_cache = self.forward_minibatch(X, ReLU)
-            #     self.back_prop_minibatch(X, Y, f_X, a, h, out, variable_cache, deact_ReLU)
+        return n, sum_batch, ce_batch
+
+
+        # elif activation_str == "sigmoid":
+        #     f_X, a, h, out, variable_cache = self.forward_minibatch(X, sigmoid)
+        #     self.back_prop_minibatch(X, Y, f_X, a, h, out, variable_cache, derivative_sigmoid)
+        # elif activation_str == "tanh":
+        #     f_X, a, h, out, variable_cache = self.forward_minibatch(X, tanh)
+        #     self.back_prop_minibatch(X, Y, f_X, a, h, out, variable_cache, deact_tanh)
+        # elif activation_str == "ReLU":
+        #     f_X, a, h, out, variable_cache = self.forward_minibatch(X, ReLU)
+        #     self.back_prop_minibatch(X, Y, f_X, a, h, out, variable_cache, deact_ReLU)
 
 
 #
@@ -481,14 +525,18 @@ class Model:
 #
 #         # def store_global_mean_variance(self, trainX):
 
+def save_model(model, vocab, label):
+    pickle.dump(model, open("dump/model_" + label,"w"))
+    pickle.dump(vocab, open("dump/vocab_" + label,"w"))
 
 
 if __name__ == '__main__':
+
     args = init_config()
 
-    # vocab, data = Vocab.from_corpus(args.train, args.vocab_size)
-    # pickle.dump(vocab,open("pickle_vocab","w"))
-    vocab = pickle.load(open("pickle_vocab", "r"))
+    vocab, data = Vocab.from_corpus(args.train, args.vocab_size)
+    pickle.dump(vocab, open("pickle_vocab", "w"))
+    # vocab = pickle.load(open("pickle_vocab", "r"))
     print ("vocab size " + str(vocab.size()))
 
     # train_data=load_ngram(args.train,vocab)
@@ -510,57 +558,105 @@ if __name__ == '__main__':
     plot_perplexity_valid = []
     speed = []
     model = Model(args)
+    start = time.time()
+    label = "_".join(sys.argv[1:])
+    print "label is " + label
+
+    f_log=open("dump/log_"+label,"w")
+
+    best_ce = float("inf")
+    best_perp = float("inf")
 
     for epoch in range(args.max_epoch):
 
         train_X, train_Y = unison_shuffled_copies(train_X, train_Y)
-
-        print "epoch " + str(epoch) + " start "
         then = time.time()
+        f_log.write("epoch " + str(epoch + 1) + " start have spent " + str(then - start) + " " + str(
+            (then - start) * 1.0 / 1000)+"\n")
 
-        for instance_id in range(0, train_X.shape[0], args.minibatch_size)[:-1]:
-            print str(instance_id*1.0/len(range(0, train_X.shape[0], args.minibatch_size)[:-1]))+" has finished for this epoch "
-            model.update_minibatch(train_X[instance_id:min(instance_id + args.minibatch_size, len(train_X))],
-                                   train_Y[instance_id:min(instance_id + args.minibatch_size, len(train_Y))],
-                                   args.activation)
+        # count = 0
 
+        N = 0
+        Perplexity_sum = 0.0
+        Ce_sum = 0.0
 
-            # print "evaluating valid current learning rate " + str(model.lr)
-            # then = time.time()
-            # cross_entropy, classification_error = model.eval_valid(valid_X, valid_Y, args.activation,
-            #                                                        args.minibatch_size)
-            # # if old_classification_error < cross_entropy or old_classification_error < classification_error:
-            # plot_epoch_ce_valid += [cross_entropy]
-            # plot_epoch_cr_valid += [classification_error]
-            # print "cross_entropy classification_error valid " + str(cross_entropy) + " " + str(classification_error)
-            #
-            # cross_entropy, classification_error = model.eval_valid(train_X, train_Y, args.activation,
-            #                                                        args.minibatch_size)
-            # plot_epoch_ce_train += [cross_entropy]
-            # plot_epoch_cr_train += [classification_error]
-            # print "cross_entropy classification_error train " + str(cross_entropy) + " " + str(classification_error)
-            #
-            # cross_entropy, classification_error = model.eval_valid(test_X, test_Y, args.activation, args.minibatch_size)
-            # plot_epoch_ce_test += [cross_entropy]
-            # plot_epoch_cr_test += [classification_error]
-            # print "cross_entropy classification_error test " + str(cross_entropy) + " " + str(classification_error)
-            #
-            # print "evaluating valid end in " + str(time.time() - then)
+        for ind, instance_id in enumerate(range(0, train_X.shape[0], args.minibatch_size)[:-1]):
+            # print str(ind * 1.0 / len(
+            #     range(0, train_X.shape[0], args.minibatch_size)[:-1])) + " has finished for this epoch "
+            n, perplexity_sum, ce_sum = model.update_minibatch(
+                train_X[instance_id:min(instance_id + args.minibatch_size, len(train_X))],
+                train_Y[instance_id:min(instance_id + args.minibatch_size, len(train_Y))],
+                args.activation)
+            N += n
+            Perplexity_sum += perplexity_sum
+            Ce_sum += ce_sum
 
+        # this_ce = (1. / N * Ce_sum)
+        # this_perp = 2 ** (-1. / N * Perplexity_sum)
 
+        f_log.write("cross entropy for training " + str((1. / N * Ce_sum))+"\n")
+        f_log.write("perplexity for training " + str(2 ** (-1. / N * Perplexity_sum))+"\n")
+
+        ce, perp = model.validate(valid_X, valid_Y)
+        f_log.write("cross entropy for validation " + str(ce)+"\n")
+        f_log.write("perplexity for validation " + str(perp)+"\n")
 
 
 
-
-
-
-
+        if (ce<best_ce) and (perp<best_perp):
+            best_ce=ce
+            best_perp=perp
+            save_model(model, vocab, label)
 
 
 
 
-            # untruncated vocab
-            # plot_ngram(data)
 
-            # truncated vocab
-            # plot_ngram(data, vocab)
+        #     count += 1
+        #     if (count > 10):
+        #         break
+        # break
+
+
+        # print "evaluating valid current learning rate " + str(model.lr)
+        # then = time.time()
+        # cross_entropy, classification_error = model.eval_valid(valid_X, valid_Y, args.activation,
+        #                                                        args.minibatch_size)
+        # # if old_classification_error < cross_entropy or old_classification_error < classification_error:
+        # plot_epoch_ce_valid += [cross_entropy]
+        # plot_epoch_cr_valid += [classification_error]
+        # print "cross_entropy classification_error valid " + str(cross_entropy) + " " + str(classification_error)
+        #
+        # cross_entropy, classification_error = model.eval_valid(train_X, train_Y, args.activation,
+        #                                                        args.minibatch_size)
+        # plot_epoch_ce_train += [cross_entropy]
+        # plot_epoch_cr_train += [classification_error]
+        # print "cross_entropy classification_error train " + str(cross_entropy) + " " + str(classification_error)
+        #
+        # cross_entropy, classification_error = model.eval_valid(test_X, test_Y, args.activation, args.minibatch_size)
+        # plot_epoch_ce_test += [cross_entropy]
+        # plot_epoch_cr_test += [classification_error]
+        # print "cross_entropy classification_error test " + str(cross_entropy) + " " + str(classification_error)
+        #
+        # print "evaluating valid end in " + str(time.time() - then)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    # untruncated vocab
+    # plot_ngram(data)
+
+    # truncated vocab
+    # plot_ngram(data, vocab)
