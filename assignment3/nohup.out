@@ -1,0 +1,140 @@
+Traceback (most recent call last):
+  File "train.py", line 3, in <module>
+    from nltk.translate.bleu_score import corpus_bleu, sentence_bleu, SmoothingFunction
+  File "/bos/usr0/xinq/.local/lib/python2.7/site-packages/nltk/__init__.py", line 137, in <module>
+    from nltk.stem import *
+  File "/bos/usr0/xinq/.local/lib/python2.7/site-packages/nltk/stem/__init__.py", line 29, in <module>
+    from nltk.stem.snowball import SnowballStemmer
+  File "/bos/usr0/xinq/.local/lib/python2.7/site-packages/nltk/stem/snowball.py", line 26, in <module>
+    from nltk.corpus import stopwords
+  File "/bos/usr0/xinq/.local/lib/python2.7/site-packages/nltk/corpus/__init__.py", line 66, in <module>
+    from nltk.corpus.reader import *
+  File "/bos/usr0/xinq/.local/lib/python2.7/site-packages/nltk/corpus/reader/__init__.py", line 105, in <module>
+    from nltk.corpus.reader.panlex_lite import *
+  File "/bos/usr0/xinq/.local/lib/python2.7/site-packages/nltk/corpus/reader/panlex_lite.py", line 15, in <module>
+    import sqlite3
+  File "/opt/python27/lib/python2.7/sqlite3/__init__.py", line 24, in <module>
+    from dbapi2 import *
+  File "/opt/python27/lib/python2.7/sqlite3/dbapi2.py", line 27, in <module>
+    from _sqlite3 import *
+ImportError: No module named _sqlite3
+Traceback (most recent call last):
+  File "train.py", line 3, in <module>
+    from nltk.translate.bleu_score import corpus_bleu, sentence_bleu, SmoothingFunction
+  File "/bos/usr0/xinq/.local/lib/python2.7/site-packages/nltk/__init__.py", line 137, in <module>
+    from nltk.stem import *
+  File "/bos/usr0/xinq/.local/lib/python2.7/site-packages/nltk/stem/__init__.py", line 29, in <module>
+    from nltk.stem.snowball import SnowballStemmer
+  File "/bos/usr0/xinq/.local/lib/python2.7/site-packages/nltk/stem/snowball.py", line 26, in <module>
+    from nltk.corpus import stopwords
+  File "/bos/usr0/xinq/.local/lib/python2.7/site-packages/nltk/corpus/__init__.py", line 66, in <module>
+    from nltk.corpus.reader import *
+  File "/bos/usr0/xinq/.local/lib/python2.7/site-packages/nltk/corpus/reader/__init__.py", line 105, in <module>
+    from nltk.corpus.reader.panlex_lite import *
+  File "/bos/usr0/xinq/.local/lib/python2.7/site-packages/nltk/corpus/reader/panlex_lite.py", line 15, in <module>
+    import sqlite3
+  File "/opt/python27/lib/python2.7/sqlite3/__init__.py", line 24, in <module>
+    from dbapi2 import *
+  File "/opt/python27/lib/python2.7/sqlite3/dbapi2.py", line 27, in <module>
+    from _sqlite3 import *
+ImportError: No module named _sqlite3
+Traceback (most recent call last):
+  File "train.py", line 3, in <module>
+    from nltk.translate.bleu_score import corpus_bleu, sentence_bleu, SmoothingFunction
+  File "/bos/usr0/xinq/.local/lib/python2.7/site-packages/nltk/__init__.py", line 137, in <module>
+    from nltk.stem import *
+  File "/bos/usr0/xinq/.local/lib/python2.7/site-packages/nltk/stem/__init__.py", line 29, in <module>
+    from nltk.stem.snowball import SnowballStemmer
+  File "/bos/usr0/xinq/.local/lib/python2.7/site-packages/nltk/stem/snowball.py", line 26, in <module>
+    from nltk.corpus import stopwords
+  File "/bos/usr0/xinq/.local/lib/python2.7/site-packages/nltk/corpus/__init__.py", line 66, in <module>
+    from nltk.corpus.reader import *
+  File "/bos/usr0/xinq/.local/lib/python2.7/site-packages/nltk/corpus/reader/__init__.py", line 105, in <module>
+    from nltk.corpus.reader.panlex_lite import *
+  File "/bos/usr0/xinq/.local/lib/python2.7/site-packages/nltk/corpus/reader/panlex_lite.py", line 15, in <module>
+    import sqlite3
+  File "/opt/python27/lib/python2.7/sqlite3/__init__.py", line 24, in <module>
+    from dbapi2 import *
+  File "/opt/python27/lib/python2.7/sqlite3/dbapi2.py", line 27, in <module>
+    from _sqlite3 import *
+ImportError: No module named _sqlite3
+Traceback (most recent call last):
+  File "train.py", line 3, in <module>
+    from nltk.translate.bleu_score import corpus_bleu, sentence_bleu, SmoothingFunction
+  File "/bos/usr0/xinq/.local/lib/python2.7/site-packages/nltk/__init__.py", line 137, in <module>
+    from nltk.stem import *
+  File "/bos/usr0/xinq/.local/lib/python2.7/site-packages/nltk/stem/__init__.py", line 29, in <module>
+    from nltk.stem.snowball import SnowballStemmer
+  File "/bos/usr0/xinq/.local/lib/python2.7/site-packages/nltk/stem/snowball.py", line 26, in <module>
+    from nltk.corpus import stopwords
+  File "/bos/usr0/xinq/.local/lib/python2.7/site-packages/nltk/corpus/__init__.py", line 66, in <module>
+    from nltk.corpus.reader import *
+  File "/bos/usr0/xinq/.local/lib/python2.7/site-packages/nltk/corpus/reader/__init__.py", line 105, in <module>
+    from nltk.corpus.reader.panlex_lite import *
+  File "/bos/usr0/xinq/.local/lib/python2.7/site-packages/nltk/corpus/reader/panlex_lite.py", line 15, in <module>
+    import sqlite3
+  File "/opt/python27/lib/python2.7/sqlite3/__init__.py", line 24, in <module>
+    from dbapi2 import *
+  File "/opt/python27/lib/python2.7/sqlite3/dbapi2.py", line 27, in <module>
+    from _sqlite3 import *
+ImportError: No module named _sqlite3
+vocab size 8000
+training ngram size (86402, 4)
+valid ngram size (10360, 4)
+self.W[1][1].shape (128, 16)
+self.W[2].shape (8000, 128)
+self.b[1].shape (128,)
+self.C.shape (8000, 16)
+label is -lr_1.0
+vocab size 8000
+training ngram size (86402, 4)
+valid ngram size (10360, 4)
+self.W[1][1].shape (128, 16)
+self.W[2].shape (8000, 128)
+self.b[1].shape (128,)
+self.C.shape (8000, 16)
+label is -lr_0.5
+vocab size 8000
+training ngram size (86402, 4)
+valid ngram size (10360, 4)
+self.W[1][1].shape (128, 16)
+self.W[2].shape (8000, 128)
+self.b[1].shape (128,)
+self.C.shape (8000, 16)
+label is -activation_tanh_-lr_1.0
+vocab size 8000
+training ngram size (86402, 4)
+valid ngram size (10360, 4)
+self.W[1][1].shape (128, 16)
+self.W[2].shape (8000, 128)
+self.b[1].shape (128,)
+self.C.shape (8000, 16)
+label is -activation_tanh_-lr_0.5
+Killed by SIGHUP.
+Killed by SIGHUP.
+vocab size 8000
+training ngram size (86402, 4)
+valid ngram size (10360, 4)
+self.W[1][1].shape (256, 16)
+self.W[2].shape (8000, 256)
+self.b[1].shape (256,)
+self.C.shape (8000, 16)
+label is -hidden_size_256
+vocab size 8000
+training ngram size (86402, 4)
+valid ngram size (10360, 4)
+self.W[1][1].shape (256, 16)
+self.W[2].shape (8000, 256)
+self.b[1].shape (256,)
+self.C.shape (8000, 16)
+label is -hidden_size_256_-lr_1.0
+Killed by SIGHUP.
+Killed by SIGHUP.
+vocab size 8000
+training ngram size (86402, 4)
+valid ngram size (10360, 4)
+self.W[1][1].shape (128, 16)
+self.W[2].shape (8000, 128)
+self.b[1].shape (128,)
+self.C.shape (8000, 16)
+label is -lr_1.0_-max_epoch_200
