@@ -1,0 +1,22 @@
+Here is a list of commands to run the results for Question 3.
+
+3.1 & 3.2 
+	python train.py [no arguments needed, otherwise, please refer the code for options]
+
+The model takes around 1.5 hrs to train 100 epochs under a normal PC. Even with Ctrl(cmd)+C intervention, intermediate best models are saved under dump/ directory. 
+
+The vocabulary and its statistics are pickled as vocab_[arugments] under dump/ directory. 
+
+3.3
+	python train.py -activation tanh
+
+3.4
+	python lang_generation.py
+
+3.4
+	
+
+
+sudo pip install opt_einsum
+
+

@@ -1,0 +1,11 @@
+epoch 1 start have spent 0.0143840312958 1.43840312958e-05
+cross entropy for training 8.21164818386
+perplexity for training 3683.60876327
+cross entropy for validation 6.66647321945
+perplexity for validation 785.620003521
+epoch 2 start have spent 103.523015022 0.103523015022
+cross entropy for training 6.73029949967
+perplexity for training 837.398028835
+cross entropy for validation 6.34434233721
+perplexity for validation 569.262883564
+epoch 3 start have spent 210.361827135 0.210361827135

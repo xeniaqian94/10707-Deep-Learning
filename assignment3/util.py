@@ -16,14 +16,16 @@ def read_corpus(file_path):
 
 def load_ngram(file_path,vocab,n=4):
     data=read_corpus(file_path)
+    return load_ngram_without_corpus(data,vocab,n)
+
+
+def load_ngram_without_corpus(data_list,vocab,n=4):
     ngram = []
 
-    for sent in data:
+    for sent in data_list:
         for i in range(0, len(sent) + 1 - n):
             ngram += [[vocab.word_to_id(token) for token in sent[i:i + 4]]]
     return np.asarray(ngram)
-
-
 
 
 def plot_ngram(data, vocab=None, n=4, top=50):
