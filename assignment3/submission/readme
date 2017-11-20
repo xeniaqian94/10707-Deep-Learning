@@ -11,12 +11,23 @@ The vocabulary and its statistics are pickled as vocab_[arugments] under dump/ d
 	python train.py -activation tanh
 
 3.4
-	python lang_generation.py
+	python lang_generation.py [model_variant_name]
+	e.g. python lang_generation.py -lr_1.0_-max_epoch_20
 
-3.4
-	
+	python similar_words.py -lr_1.0_-max_epoch_200
+3.5
+    python visualize_embedding.py [model_variant_name]
+    python visualize_embedding.py -lr_1.0_-max_epoch_200
 
 
-sudo pip install opt_einsum
+3.6 The following script requires PyTorch to be installed. 
+	python pytorch_train_RNN.py [embed_size]
+	Please then check log_pytorch_rnn_[variant] for loss and perplexity across epoch time 
+
+To visualize RNN embeddings, 
+	python visualize_embedding.py -lr_1.0_-max_epoch_200
+To plot based on logs under dump/, invoke python plot.py dump/log [variants]*
+
+For any question, please contact Xin Qian at email xinq@andrew.cmu.edu
 
 

@@ -33,7 +33,7 @@ import re
 import os
 markers=["v","o","^",".",",","<",">"]
 colors=['b', 'g', 'r', 'y', 'm', 'c', 'k']
-lines=['-',':','.','.-']
+lines=['-',':','.','.-','--']
 
 files=sys.argv[1:]
 

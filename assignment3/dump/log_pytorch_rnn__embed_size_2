@@ -1,0 +1,86 @@
+epoch 1 start 
+cross entropy for training 6.48854555682
+perplexity for training 657.566270489
+cross entropy for validation 5.98160065758
+perplexity for validation 396.073855645
+epoch 2 start 
+cross entropy for training 6.19811904664
+perplexity for training 491.823072757
+cross entropy for validation 5.76563442628
+perplexity for validation 319.14150928
+epoch 3 start 
+cross entropy for training 6.0110313416
+perplexity for training 407.903791215
+cross entropy for validation 5.70474556588
+perplexity for validation 300.289002679
+epoch 4 start 
+cross entropy for training 5.87109771883
+perplexity for training 354.638060688
+cross entropy for validation 5.586880882
+perplexity for validation 266.901813751
+epoch 5 start 
+cross entropy for training 5.75990583504
+perplexity for training 317.318446502
+cross entropy for validation 5.53181256033
+perplexity for validation 252.601318243
+epoch 6 start 
+cross entropy for training 5.6645137144
+perplexity for training 288.447677478
+cross entropy for validation 5.52792327763
+perplexity for validation 251.620617298
+epoch 7 start 
+cross entropy for training 5.58026862228
+perplexity for training 265.142820237
+cross entropy for validation 5.50268007963
+perplexity for validation 245.348470124
+epoch 8 start 
+cross entropy for training 5.50375140049
+perplexity for training 245.611593475
+cross entropy for validation 5.47800358953
+perplexity for validation 239.368384159
+epoch 9 start 
+cross entropy for training 5.43150727069
+perplexity for training 228.49338819
+cross entropy for validation 5.46183789817
+perplexity for validation 235.529821385
+epoch 10 start 
+cross entropy for training 5.36622237576
+perplexity for training 214.052729971
+cross entropy for validation 5.43344519184
+perplexity for validation 228.936644883
+epoch 11 start 
+cross entropy for training 5.30622725284
+perplexity for training 201.588249805
+cross entropy for validation 5.41349541506
+perplexity for validation 224.414489859
+epoch 12 start 
+cross entropy for training 5.24756749661
+perplexity for training 190.103278039
+cross entropy for validation 5.4247892284
+perplexity for validation 226.963526618
+epoch 13 start 
+cross entropy for training 5.19310246313
+perplexity for training 180.026211381
+cross entropy for validation 5.44679506515
+perplexity for validation 232.013407941
+epoch 14 start 
+cross entropy for training 5.14583653278
+perplexity for training 171.715069465
+cross entropy for validation 5.4200346133
+perplexity for validation 225.886868381
+epoch 15 start 
+cross entropy for training 5.09730303199
+perplexity for training 163.58014081
+cross entropy for validation 5.42363507481
+perplexity for validation 226.70173226
+epoch 16 start 
+cross entropy for training 5.0537610556
+perplexity for training 156.610378857
+cross entropy for validation 5.38724624457
+perplexity for validation 218.600556536
+epoch 17 start 
+cross entropy for training 5.01343739527
+perplexity for training 150.420904271
+cross entropy for validation 5.40030088682
+perplexity for validation 221.47310813
+epoch 18 start 

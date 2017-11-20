@@ -6,9 +6,13 @@ from util import *
 
 label = sys.argv[1]  # -lr_1.0_-max_epoch_200
 
-sequences = [['government', 'of', 'united', 'states'], ['he', 'said', 'that', 'is'], ['city', 'of', 'new', 'york'], ['of', 'new', 'york','city'],['life', 'in', 'the', 'world'],
-             ['he', 'is', 'the', 'man'], ['the', 'international', 'olympic', 'committee'],['city', 'of', 'los', 'angeles'],
-             ['the', 'national', 'association','of'], ['the', 'u.s.', 'and', 'japanese'], ['the', 'commerce', 'department','has'],['international','business','machines']]
+# sequences = [['government', 'of', 'united', 'states'], ['he', 'said', 'that', 'is'], ['city', 'of', 'new', 'york'], ['of', 'new', 'york','city'],['life', 'in', 'the', 'world'],
+#              ['he', 'is', 'the', 'man'], ['the', 'international', 'olympic', 'committee'],['city', 'of', 'los', 'angeles'],
+#              ['the', 'national', 'association','of'], ['the', 'u.s.', 'and', 'japanese'], ['the', 'commerce', 'department','has'],['international','business','machines']]
+
+
+
+sequences=[['use','a','great','tool'],['for','extra','points','you'],['language','generation','task','is'],['the','united','states','of'],['gone','with','the','wind']]
 
 model = pickle.load(open("dump/model_" + label, "r"))
 vocab = pickle.load(open("dump/vocab_" + label, "r"))

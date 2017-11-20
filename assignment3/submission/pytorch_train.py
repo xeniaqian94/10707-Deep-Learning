@@ -1,92 +1,153 @@
 import torch
 import torch.autograd as autograd
+from torch.autograd import *
 import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
+import pickle
+import numpy as np
+from util import *
+
+from train import Model, Vocab
+import sys
 
 torch.manual_seed(1)
-word_to_ix = {"hello": 0, "world": 1}
-embeds = nn.Embedding(2, 5)  # 2 words in vocab, 5 dimensional embeddings
-lookup_tensor = torch.LongTensor([word_to_ix["hello"]])
-hello_embed = embeds(autograd.Variable(lookup_tensor))
-print(hello_embed)
+vocab = pickle.load(open("dump/vocab_-lr_0.5", "r"))
 
-CONTEXT_SIZE = 2
+word_to_ix = vocab.w2i
+
+CONTEXT_SIZE = 3
 EMBEDDING_DIM = 10
-# We will use Shakespeare Sonnet 2
-test_sentence = """When forty winters shall besiege thy brow,
-And dig deep trenches in thy beauty's field,
-Thy youth's proud livery so gazed on now,
-Will be a totter'd weed of small worth held:
-Then being asked, where all thy beauty lies,
-Where all the treasure of thy lusty days;
-To say, within thine own deep sunken eyes,
-Were an all-eating shame, and thriftless praise.
-How much more praise deserv'd thy beauty's use,
-If thou couldst answer 'This fair child of mine
-Shall sum my count, and make my old excuse,'
-Proving his beauty by succession thine!
-This were to be new made when thou art old,
-And see thy blood warm when thou feel'st it cold.""".split()
-# we should tokenize the input, but we will ignore that for now
-# build a list of tuples.  Each tuple is ([ word_i-2, word_i-1 ], target word)
-trigrams = [([test_sentence[i], test_sentence[i + 1]], test_sentence[i + 2])
-            for i in range(len(test_sentence) - 2)]
-# print the first 3, just so you can see what they look like
-print(trigrams[:3])
+HIDDEN_SIZE = 128
+ACTIVATION = 'linear'
+VOCAB_SIZE = len(vocab.w2i.keys())
+MAX_EPOCH = 100
+BATCH_SIZE = 16
 
-vocab = set(test_sentence)
-word_to_ix = {word: i for i, word in enumerate(vocab)}
+train_data = pickle.load(open("pickle_train_data", "r"))
+print "training ngram size " + str(train_data.shape)
+
+valid_data = pickle.load(open("pickle_valid_data", "r"))
+print "valid ngram size " + str(valid_data.shape)
+
+train_X = train_data[:, :-1]
+train_Y = train_data[:, -1]
+
+valid_X = valid_data[:, :-1]
+valid_Y = valid_data[:, -1]
 
 
 class NGramLanguageModeler(nn.Module):
-
-    def __init__(self, vocab_size, embedding_dim, context_size):
+    def __init__(self, vocab_size, embedding_dim, hidden_size, context_size, activation):
         super(NGramLanguageModeler, self).__init__()
         self.embeddings = nn.Embedding(vocab_size, embedding_dim)
-        self.linear1 = nn.Linear(context_size * embedding_dim, 128)
-        self.linear2 = nn.Linear(128, vocab_size)
+        self.linear1 = nn.Linear(context_size * embedding_dim, hidden_size)
+        self.linear2 = nn.Linear(hidden_size, vocab_size)
+        self.embedding_dim = embedding_dim
+        self.context_size = context_size
+        self.activation = activation
 
-    def forward(self, inputs):
+    def forward(self, inputs,Y):
         embeds = self.embeddings(inputs).view((1, -1))
-        out = F.relu(self.linear1(embeds))
+
+        if self.activation == 'linear':
+            out = self.linear1(embeds.view((-1, self.embedding_dim * self.context_size)))
+        else:
+            out = F.tanh(self.linear1(embeds.view((-1, self.embedding_dim * self.context_size))))
+        # out = F.relu(self.linear1(embeds))
         out = self.linear2(out)
-        log_probs = F.log_softmax(out)
-        return log_probs
+
+        probs = out.data.numpy()
+
+        exp_scores = np.exp(probs)
+
+        softmax_over_class = exp_scores / np.sum(exp_scores, axis=1, keepdims=True)
+
+        n, ce_batch, sum_batch = calculate_from_softmax(softmax_over_class, Y)
+
+        # log_probs = F.log_softmax(out)
+        # probs = F.softmax(out)
+
+
+        # probs = out
+        #
+        # probs = probs.data.numpy()
+        #
+        # exp_scores = np.exp(probs)
+        #
+        # # raw_input("exp scores shape " + str(exp_scores.shape))
+        # softmax_over_class = exp_scores / np.sum(exp_scores, axis=1, keepdims=True)  # sum across rows
+        #
+        # raw_input("softmax_over_class " + str(softmax_over_class.shape))
+
+
+        return out,n,ce_batch,sum_batch
+
+
+    def evaluate(self,X,Y):
+        context_var = autograd.Variable(torch.LongTensor(X))
+        out,n,ce_batch,sum_batch = self.forward(context_var,Y)
+
+        ce = 1.0 / n * ce_batch
+        perp = 2 ** (-1. / n * sum_batch)
+
+        # correct_logprobs = -np.log2(probs[range(probs.shape[0]), target])
+        # perp = np.average(correct_logprobs)
+
+        return ce, perp
+
+def calculate_from_softmax(softmax_over_class,Y):
+    return softmax_over_class.shape[0],np.sum(-1.0 * np.log(softmax_over_class[np.arange(softmax_over_class.shape[0]), Y])),np.sum(np.log2(softmax_over_class[np.arange(softmax_over_class.shape[0]), Y]))
 
 
 losses = []
-loss_function = nn.NLLLoss()
-model = NGramLanguageModeler(len(vocab), EMBEDDING_DIM, CONTEXT_SIZE)
-optimizer = optim.SGD(model.parameters(), lr=0.001)
+# loss_function = nn.NLLLoss()
+loss_function = nn.CrossEntropyLoss()
+model = NGramLanguageModeler(VOCAB_SIZE, EMBEDDING_DIM, HIDDEN_SIZE, CONTEXT_SIZE, ACTIVATION)
+optimizer = optim.SGD(model.parameters(), lr=0.01, momentum=0.9, weight_decay=0.0001)
 
-for epoch in range(10):
-    total_loss = torch.Tensor([0])
-    for context, target in trigrams:
 
-        # Step 1. Prepare the inputs to be passed to the model (i.e, turn the words
-        # into integer indices and wrap them in variables)
-        context_idxs = [word_to_ix[w] for w in context]
-        context_var = autograd.Variable(torch.LongTensor(context_idxs))
 
-        # Step 2. Recall that torch *accumulates* gradients. Before passing in a
-        # new instance, you need to zero out the gradients from the old
-        # instance
-        model.zero_grad()
 
-        # Step 3. Run the forward pass, getting log probabilities over next
-        # words
-        log_probs = model(context_var)
+label = "_hidden_size+"+str(HIDDEN_SIZE)
+print "label is " + label
 
-        # Step 4. Compute your loss function. (Again, Torch wants the target
-        # word wrapped in a variable)
-        loss = loss_function(log_probs, autograd.Variable(
-            torch.LongTensor([word_to_ix[target]])))
+f_log=open("dump/log_pytorch_"+label,"w")
 
-        # Step 5. Do the backward pass and update the gradient
+for epoch in range(MAX_EPOCH):
+
+    train_X, train_Y = unison_shuffled_copies(train_X, train_Y)
+    f_log.write("epoch " + str(epoch + 1) + " start \n")
+
+    CE=0
+    PERP=0
+    N=0
+
+
+    for ind, instance_id in enumerate(range(0, train_X.shape[0], BATCH_SIZE)[:-1]):
+        print "epoch ",epoch,"ind ",ind,"total ",len(range(0, train_X.shape[0], BATCH_SIZE)[:-1])
+        context=train_X[instance_id:min(instance_id + BATCH_SIZE, len(train_X))]
+        target=train_Y[instance_id:min(instance_id + BATCH_SIZE, len(train_Y))]
+
+        context_var = autograd.Variable(torch.LongTensor(context))
+        target_var = autograd.Variable(torch.LongTensor(target))
+
+        optimizer.zero_grad()
+        probs,n,ce_batch,sum_batch = model(context_var,target)
+        loss = loss_function(probs, target_var)
         loss.backward()
         optimizer.step()
 
-        total_loss += loss.data
-    losses.append(total_loss)
-print(losses)  # The loss decreased every iteration over the training data!
+        N +=n
+        CE+=ce_batch
+        PERP+=sum_batch
+
+    f_log.write("cross entropy for training " + str((1. / N * CE)) + "\n")
+    f_log.write("perplexity for training " + str(2 ** (-1. / N * PERP)) + "\n")
+
+    ce, perp = model.evaluate(valid_X, valid_Y)
+    f_log.write("cross entropy for validation " + str(ce) + "\n")
+    f_log.write("perplexity for validation " + str(perp) + "\n")
+    f_log.flush()
+
+

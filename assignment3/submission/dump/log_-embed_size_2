@@ -1,0 +1,96 @@
+epoch 1 start have spent 0.0421380996704 4.21380996704e-05
+cross entropy for training 8.20271817936
+perplexity for training 3650.86054053
+cross entropy for validation 6.66736710738
+perplexity for validation 786.322573726
+epoch 2 start have spent 201.791693926 0.201791693926
+cross entropy for training 6.72612739463
+perplexity for training 833.911594243
+cross entropy for validation 6.32717333946
+perplexity for validation 559.572634364
+epoch 3 start have spent 394.301383972 0.394301383972
+cross entropy for training 6.60074888204
+perplexity for training 735.645895007
+cross entropy for validation 6.32348737889
+perplexity for validation 557.513868293
+epoch 4 start have spent 638.735439062 0.638735439062
+cross entropy for training 6.56310679518
+perplexity for training 708.469348156
+cross entropy for validation 6.21668432097
+perplexity for validation 501.039189696
+epoch 5 start have spent 787.554594994 0.787554594994
+cross entropy for training 6.56097839815
+perplexity for training 706.963047669
+cross entropy for validation 6.23466758031
+perplexity for validation 510.131012669
+epoch 6 start have spent 858.758760929 0.858758760929
+cross entropy for training 6.54807801923
+perplexity for training 697.901530638
+cross entropy for validation 6.23417665979
+perplexity for validation 509.880640346
+epoch 7 start have spent 930.72034502 0.93072034502
+cross entropy for training 6.5460452754
+perplexity for training 696.484316513
+cross entropy for validation 6.22845142416
+perplexity for validation 506.96979413
+epoch 8 start have spent 1009.83480501 1.00983480501
+cross entropy for training 6.54133204981
+perplexity for training 693.209352695
+cross entropy for validation 6.25252576513
+perplexity for validation 519.32285712
+epoch 9 start have spent 1087.417377 1.087417377
+cross entropy for training 6.5437695093
+perplexity for training 694.901083338
+cross entropy for validation 6.22515608823
+perplexity for validation 505.30190798
+epoch 10 start have spent 1164.11661792 1.16411661792
+cross entropy for training 6.53892926717
+perplexity for training 691.545720771
+cross entropy for validation 6.20143171687
+perplexity for validation 493.455023472
+epoch 11 start have spent 1243.05990791 1.24305990791
+cross entropy for training 6.54196953989
+perplexity for training 693.651407671
+cross entropy for validation 6.22683263694
+perplexity for validation 506.149781795
+epoch 12 start have spent 1316.85395408 1.31685395408
+cross entropy for training 6.53893766106
+perplexity for training 691.551525551
+cross entropy for validation 6.21260079687
+perplexity for validation 498.997355867
+epoch 13 start have spent 1392.33577299 1.39233577299
+cross entropy for training 6.54515756206
+perplexity for training 695.866312439
+cross entropy for validation 6.1959088467
+perplexity for validation 490.737247312
+epoch 14 start have spent 1475.82370901 1.47582370901
+cross entropy for training 6.53401885431
+perplexity for training 688.158269471
+cross entropy for validation 6.20417534428
+perplexity for validation 494.810739139
+epoch 15 start have spent 1544.13397813 1.54413397813
+cross entropy for training 6.53941944758
+perplexity for training 691.884786032
+cross entropy for validation 6.19582500528
+perplexity for validation 490.696104929
+epoch 16 start have spent 1621.59174109 1.62159174109
+cross entropy for training 6.54445822712
+perplexity for training 695.379838941
+cross entropy for validation 6.21263936391
+perplexity for validation 499.016601085
+epoch 17 start have spent 1696.07533503 1.69607533503
+cross entropy for training 6.53821208277
+perplexity for training 691.049932776
+cross entropy for validation 6.1933478199
+perplexity for validation 489.482064035
+epoch 18 start have spent 1775.61491609 1.77561491609
+cross entropy for training 6.53776757234
+perplexity for training 690.742822131
+cross entropy for validation 6.1975710214
+perplexity for validation 491.553616636
+epoch 19 start have spent 1846.21142793 1.84621142793
+cross entropy for training 6.53155356193
+perplexity for training 686.463847612
+cross entropy for validation 6.23100210429
+perplexity for validation 508.264562479
+epoch 20 start have spent 1918.37645197 1.91837645197

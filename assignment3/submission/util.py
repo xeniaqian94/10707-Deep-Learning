@@ -69,7 +69,7 @@ def softmax(x):
     except:
         print "exception softmax"
         print x
-        sys.exit(0)
+        # sys.exit(0)
 
 
 

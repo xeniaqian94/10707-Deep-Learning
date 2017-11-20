@@ -156,7 +156,12 @@ class Model:
             else:
                 h += [a[-1].T]
 
+
+
+
+
         softmax_over_class = softmax(a[-1].T).T  # softmax_over_class = #intances * # dimension
+        # raw_input("feed after softmax " + str(softmax_over_class.shape))
 
         return softmax_over_class, a, h
 
@@ -364,8 +369,6 @@ if __name__ == '__main__':
         Ce_sum = 0.0
 
         for ind, instance_id in enumerate(range(0, train_X.shape[0], args.minibatch_size)[:-1]):
-            # print str(ind * 1.0 / len(
-            #     range(0, train_X.shape[0], args.minibatch_size)[:-1])) + " has finished for this epoch "
             n, perplexity_sum, ce_sum = model.update_minibatch(
                 train_X[instance_id:min(instance_id + args.minibatch_size, len(train_X))],
                 train_Y[instance_id:min(instance_id + args.minibatch_size, len(train_Y))],
@@ -373,9 +376,6 @@ if __name__ == '__main__':
             N += n
             Perplexity_sum += perplexity_sum
             Ce_sum += ce_sum
-
-        # this_ce = (1. / N * Ce_sum)
-        # this_perp = 2 ** (-1. / N * Perplexity_sum)
 
         f_log.write("cross entropy for training " + str((1. / N * Ce_sum))+"\n")
         f_log.write("perplexity for training " + str(2 ** (-1. / N * Perplexity_sum))+"\n")
